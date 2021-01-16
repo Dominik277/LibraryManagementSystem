@@ -47,10 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // menu should be considered as top level destinations.
 
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
-                .build();
+
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle
                 (this,drawer,toolbar,R.string.navigation_drawer_open,

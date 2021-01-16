@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -8,33 +9,42 @@
             <menu>
                 <item
                     android:id="@+id/programiranje"
-                    android:title="Programiranje"/>
+                    android:title="Programiranje"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/hardver"
-                    android:title="Hardver"/>
+                    android:title="Hardver"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/mreze_i_protokoli"
-                    android:title="Mreze i protokoli"/>
+                    android:title="Mreze i protokoli"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
-                    android:id="operativni_sustavi"
-                    android:title="Operativni sustavi"/>
+                    android:id="@+id/operativni_sustavi"
+                    android:title="Operativni sustavi"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
             </menu>
         </item>
 
-        <item android:title="Elektrotehnika">
+        <item android:title="Elektrotehnika"
+              android:icon="@drawable/ic_baseline_add_box_24">
             <menu>
                 <item
-                    android:id="elektronika"
-                    android:title="Elektronika"/>
+                    android:id="@+id/elektronika"
+                    android:title="Elektronika"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
-                    android:id="energetika"
-                    android:title="Energetika"/>
+                    android:id="@+id/energetika"
+                    android:title="Energetika"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
-                    android:id="Elektrotehnika"
-                    android:title="Elektrotehnika"/>
+                    android:id="@+id/elektrotehnika"
+                    android:title="Elektrotehnika"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/robotika"
-                    android:title="Robotika"/>
+                    android:title="Robotika"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
             </menu>
         </item>
 
@@ -42,32 +52,39 @@
             <menu>
                 <item
                     android:id="@+id/organska_kemija"
-                    android:title="Organska kemija"/>
+                    android:title="Organska kemija"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/fizikalna_kemija"
-                    android:title="Fizikalna kemija"/>
+                    android:title="Fizikalna kemija"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/analiticka_kemija"
-                    android:title="Analiticka kemija"/>
+                    android:title="Analiticka kemija"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
             </menu>
         </item>
 
-        <item android:title="Medicina">
+        <item android:title="Medicina"
+              >
             <menu>
                 <item
-                    android:id="anatomija"
-                    android:title="Anatomija"/>
+                    android:id="@+id/anatomija"
+                    android:title="Anatomija"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/biokemija"
-                    android:title="Biokemija"/>
+                    android:title="Biokemija"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/sportska_medicina"
-                    android:title="Sportska medicina"/>
+                    android:title="Sportska medicina"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
                 <item
                     android:id="@+id/povijest_medicine"
-                    android:title="Povijest medicine"/>
+                    android:title="Povijest medicine"
+                    android:icon="@drawable/ic_baseline_add_box_24"/>
             </menu>
         </item>
-
     </group>
 </menu>
