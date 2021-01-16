@@ -17,7 +17,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import hr.dominik.library.draweraktivnosti.AnalitickaKemijaActivity;
+import hr.dominik.library.draweraktivnosti.AnatomijaActivity;
+import hr.dominik.library.draweraktivnosti.BioKemijaActivity;
+import hr.dominik.library.draweraktivnosti.ElektronikaActivity;
+import hr.dominik.library.draweraktivnosti.ElektrotehnikaActivity;
+import hr.dominik.library.draweraktivnosti.EnergetikaActivity;
+import hr.dominik.library.draweraktivnosti.FizikalnaKemijaActivity;
+import hr.dominik.library.draweraktivnosti.HardverActivity;
+import hr.dominik.library.draweraktivnosti.MrezeIProtokoliActivity;
+import hr.dominik.library.draweraktivnosti.OperativniSustaviActivity;
+import hr.dominik.library.draweraktivnosti.OrganskaKemijaActivity;
+import hr.dominik.library.draweraktivnosti.PovijestMedicineActivity;
 import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
+import hr.dominik.library.draweraktivnosti.RobotikaActivity;
+import hr.dominik.library.draweraktivnosti.SportskaMedicinaActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -77,6 +90,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.programiranje){
             startActivity(new Intent(MainActivity.this, ProgramiranjeActivity.class));
+        }
+        if (id == R.id.hardver){
+            startActivity(new Intent(MainActivity.this, HardverActivity.class));
+        }
+        if (id == R.id.mreze_i_protokoli){
+            startActivity(new Intent(MainActivity.this, MrezeIProtokoliActivity.class));
+        }
+        if (id == R.id.operativni_sustavi){
+            startActivity(new Intent(MainActivity.this, OperativniSustaviActivity.class));
+        }
+        if (id == R.id.elektronika){
+            startActivity(new Intent(MainActivity.this, ElektronikaActivity.class));
+        }
+        if (id == R.id.energetika){
+            startActivity(new Intent(MainActivity.this, EnergetikaActivity.class));
+        }
+        if (id == R.id.elektrotehnika){
+            startActivity(new Intent(MainActivity.this, ElektrotehnikaActivity.class));
+        }
+        if (id == R.id.robotika){
+            startActivity(new Intent(MainActivity.this, RobotikaActivity.class));
+        }
+        if (id == R.id.organska_kemija){
+            startActivity(new Intent(MainActivity.this, OrganskaKemijaActivity.class));
+        }
+        if (id == R.id.fizikalna_kemija){
+            startActivity(new Intent(MainActivity.this, FizikalnaKemijaActivity.class));
+        }
+        if (id == R.id.analiticka_kemija){
+            startActivity(new Intent(MainActivity.this, AnalitickaKemijaActivity.class));
+        }
+        if (id == R.id.biokemija){
+            startActivity(new Intent(MainActivity.this, BioKemijaActivity.class));
+        }
+        if (id == R.id.sportska_medicina){
+            startActivity(new Intent(MainActivity.this, SportskaMedicinaActivity.class));
+        }
+        if (id == R.id.povijest_medicine){
+            startActivity(new Intent(MainActivity.this, PovijestMedicineActivity.class));
         }
 
 
