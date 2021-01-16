@@ -11,5 +11,7 @@ public class AnalitickaKemijaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analiticka_kemija);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

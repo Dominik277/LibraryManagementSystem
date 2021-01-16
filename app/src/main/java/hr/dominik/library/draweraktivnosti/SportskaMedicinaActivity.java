@@ -11,5 +11,7 @@ public class SportskaMedicinaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sportska_medicina);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

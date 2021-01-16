@@ -130,8 +130,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.povijest_medicine){
             startActivity(new Intent(MainActivity.this, PovijestMedicineActivity.class));
         }
-
-
         return false;
     }
 }

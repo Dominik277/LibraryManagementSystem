@@ -11,5 +11,7 @@ public class BioKemijaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bio_kemija);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

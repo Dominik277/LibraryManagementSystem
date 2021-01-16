@@ -11,5 +11,7 @@ public class ElektrotehnikaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elektrotehnika);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
