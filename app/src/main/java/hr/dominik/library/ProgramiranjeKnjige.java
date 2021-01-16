@@ -5,14 +5,14 @@ public class ProgramiranjeKnjige {
     private String imeKnjige;
     private String pisac;
     private String stranice;
-    private String datum;
+    private String godina;
     private int slika;
 
-    public ProgramiranjeKnjige(String imeKnjige,String pisac,String stranice,String datum, int slika) {
+    public ProgramiranjeKnjige(String imeKnjige, String pisac, String stranice, String godina, int slika) {
         this.imeKnjige = imeKnjige;
         this.pisac = pisac;
         this.stranice = stranice;
-        this.datum = datum;
+        this.godina = godina;
         this.slika = slika;
     }
 
@@ -32,12 +32,12 @@ public class ProgramiranjeKnjige {
         this.stranice = stranice;
     }
 
-    public String getDatum() {
-        return datum;
+    public String getGodina() {
+        return godina;
     }
 
-    public void setDatum(String datum) {
-        this.datum = datum;
+    public void setGodina(String godina) {
+        this.godina = godina;
     }
 
     public String getImeKnjige() {

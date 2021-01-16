@@ -20,11 +20,34 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"/>
         <TextView
-            android:id="@+id/tekstGridView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/naslovGridView"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
             android:layout_toEndOf="@id/slikaGridView"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/pisacGridView"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/naslovGridView"
+            android:layout_toEndOf="@id/slikaGridView"/>
+        <TextView
+            android:id="@+id/straniceGridView"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/naslovGridView"/>
+        <TextView
+            android:id="@+id/godineGridView"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/pisacGridView"
+            android:layout_below="@id/straniceGridView"/>
 
     </RelativeLayout>
 

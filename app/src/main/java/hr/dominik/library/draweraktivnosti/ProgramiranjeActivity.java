@@ -23,7 +23,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gridView);
 
         ArrayList<ProgramiranjeKnjige> courseModelArrayList = new ArrayList<ProgramiranjeKnjige>();
-        courseModelArrayList.add(new ProgramiranjeKnjige("DSA","","","", R.drawable.library));
+        courseModelArrayList.add(new ProgramiranjeKnjige("Naučite React:Prevod Drugog Izdanja","Pisac:Kirupa Činatambi","Stranice:298","Godina:2018.", R.drawable.react));
         courseModelArrayList.add(new ProgramiranjeKnjige("JAVA","","","", R.drawable.library));
         courseModelArrayList.add(new ProgramiranjeKnjige("C++","","","", R.drawable.library));
         courseModelArrayList.add(new ProgramiranjeKnjige("Python","","","", R.drawable.library));
