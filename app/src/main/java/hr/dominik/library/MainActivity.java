@@ -22,6 +22,7 @@ import hr.dominik.library.draweraktivnosti.BioKemijaActivity;
 import hr.dominik.library.draweraktivnosti.ElektronikaActivity;
 import hr.dominik.library.draweraktivnosti.ElektrotehnikaActivity;
 import hr.dominik.library.draweraktivnosti.EnergetikaActivity;
+import hr.dominik.library.draweraktivnosti.FABActivity;
 import hr.dominik.library.draweraktivnosti.FizikalnaKemijaActivity;
 import hr.dominik.library.draweraktivnosti.HardverActivity;
 import hr.dominik.library.draweraktivnosti.MrezeIProtokoliActivity;
@@ -51,8 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                openNewActivity(fab);
             }
         });
 
@@ -132,4 +132,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return false;
     }
+
+    private void openNewActivity(View view){
+        Intent intent = new Intent(MainActivity.this, FABActivity.class);
+        startActivity(intent);
+    }
+
 }

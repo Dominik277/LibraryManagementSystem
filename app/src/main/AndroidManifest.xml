@@ -10,50 +10,69 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
         <activity
-            android:name=".draweraktivnosti.PovijestMedicineActivity"
+            android:name=".draweraktivnosti.FABActivity"
+            android:label="Ovdje možete napisati upit!"
             android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".draweraktivnosti.PovijestMedicineActivity"
+            android:label="Povijest Medicine"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.SportskaMedicinaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Sportska Medicina"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.BioKemijaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Biokemija"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.AnatomijaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Anatomija"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.AnalitickaKemijaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Analiticka Kemija"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.FizikalnaKemijaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Fizikalna Kemija"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.OrganskaKemijaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Organska Kemija"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.RobotikaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Robotika"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.ElektrotehnikaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Elektrotehnika"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.EnergetikaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Energetika"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.ElektronikaActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Elektronika"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.OperativniSustaviActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Operativni Sustavi"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.MrezeIProtokoliActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Mreže i Protokoli"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.HardverActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Hardver"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.ProgramiranjeActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Programiranje"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
