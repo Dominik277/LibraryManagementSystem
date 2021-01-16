@@ -23,12 +23,12 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gridView);
 
         ArrayList<ProgramiranjeKnjige> courseModelArrayList = new ArrayList<ProgramiranjeKnjige>();
-        courseModelArrayList.add(new ProgramiranjeKnjige("DSA", R.drawable.library));
-        courseModelArrayList.add(new ProgramiranjeKnjige("JAVA", R.drawable.library));
-        courseModelArrayList.add(new ProgramiranjeKnjige("C++", R.drawable.library));
-        courseModelArrayList.add(new ProgramiranjeKnjige("Python", R.drawable.library));
-        courseModelArrayList.add(new ProgramiranjeKnjige("Javascript", R.drawable.library));
-        courseModelArrayList.add(new ProgramiranjeKnjige("DSA", R.drawable.library));
+        courseModelArrayList.add(new ProgramiranjeKnjige("DSA","","","", R.drawable.library));
+        courseModelArrayList.add(new ProgramiranjeKnjige("JAVA","","","", R.drawable.library));
+        courseModelArrayList.add(new ProgramiranjeKnjige("C++","","","", R.drawable.library));
+        courseModelArrayList.add(new ProgramiranjeKnjige("Python","","","", R.drawable.library));
+        courseModelArrayList.add(new ProgramiranjeKnjige("Javascript","","", "",R.drawable.library));
+        courseModelArrayList.add(new ProgramiranjeKnjige("DSA","","","", R.drawable.library));
 
         ProgramiranjeAdapter adapter = new ProgramiranjeAdapter(this, courseModelArrayList);
         gridView.setAdapter(adapter);

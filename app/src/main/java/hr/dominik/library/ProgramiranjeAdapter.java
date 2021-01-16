@@ -28,7 +28,7 @@ public class ProgramiranjeAdapter extends ArrayAdapter<ProgramiranjeKnjige> {
         ProgramiranjeKnjige programiranjeKnjige = getItem(position);
         TextView programiranjeText = listitemView.findViewById(R.id.tekstGridView);
         ImageView programiranjeSlika = listitemView.findViewById(R.id.slikaGridView);
-        programiranjeText.setText(programiranjeKnjige.getIme());
+        programiranjeText.setText(programiranjeKnjige.getImeKnjige());
         programiranjeSlika.setImageResource(programiranjeKnjige.getSlika());
         return listitemView;
     }
