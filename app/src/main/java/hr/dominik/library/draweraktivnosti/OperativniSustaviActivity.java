@@ -1,6 +1,7 @@
 package hr.dominik.library.draweraktivnosti;
 
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.R;
 
 import android.os.Bundle;
 
