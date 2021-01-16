@@ -9,6 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
+        <activity android:name=".draweraktivnosti.PovijestMedicineActivity"></activity>
+        <activity android:name=".draweraktivnosti.SportskaMedicinaActivity" />
+        <activity android:name=".draweraktivnosti.BioKemijaActivity" />
+        <activity android:name=".draweraktivnosti.AnatomijaActivity" />
+        <activity android:name=".draweraktivnosti.AnalitickaKemijaActivity" />
+        <activity android:name=".draweraktivnosti.FizikalnaKemijaActivity" />
+        <activity android:name=".draweraktivnosti.OrganskaKemijaActivity" />
+        <activity android:name=".draweraktivnosti.RobotikaActivity" />
+        <activity android:name=".draweraktivnosti.ElektrotehnikaActivity" />
+        <activity android:name=".draweraktivnosti.EnergetikaActivity" />
+        <activity android:name=".draweraktivnosti.ElektronikaActivity" />
+        <activity android:name=".draweraktivnosti.OperativniSustaviActivity" />
+        <activity android:name=".draweraktivnosti.MrezeIProtokoliActivity" />
+        <activity android:name=".draweraktivnosti.HardverActivity" />
+        <activity android:name=".draweraktivnosti.ProgramiranjeActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
