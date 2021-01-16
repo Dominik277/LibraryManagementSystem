@@ -4,17 +4,70 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+        <item android:title="Informatika">
+            <menu>
+                <item
+                    android:id="@+id/programiranje"
+                    android:title="Programiranje"/>
+                <item
+                    android:id="@+id/hardver"
+                    android:title="Hardver"/>
+                <item
+                    android:id="@+id/mreze_i_protokoli"
+                    android:title="Mreze i protokoli"/>
+                <item
+                    android:id="operativni_sustavi"
+                    android:title="Operativni sustavi"/>
+            </menu>
+        </item>
+
+        <item android:title="Elektrotehnika">
+            <menu>
+                <item
+                    android:id="elektronika"
+                    android:title="Elektronika"/>
+                <item
+                    android:id="energetika"
+                    android:title="Energetika"/>
+                <item
+                    android:id="Elektrotehnika"
+                    android:title="Elektrotehnika"/>
+                <item
+                    android:id="@+id/robotika"
+                    android:title="Robotika"/>
+            </menu>
+        </item>
+
+        <item android:title="Kemija">
+            <menu>
+                <item
+                    android:id="@+id/organska_kemija"
+                    android:title="Organska kemija"/>
+                <item
+                    android:id="@+id/fizikalna_kemija"
+                    android:title="Fizikalna kemija"/>
+                <item
+                    android:id="@+id/analiticka_kemija"
+                    android:title="Analiticka kemija"/>
+            </menu>
+        </item>
+
+        <item android:title="Medicina">
+            <menu>
+                <item
+                    android:id="anatomija"
+                    android:title="Anatomija"/>
+                <item
+                    android:id="@+id/biokemija"
+                    android:title="Biokemija"/>
+                <item
+                    android:id="@+id/sportska_medicina"
+                    android:title="Sportska medicina"/>
+                <item
+                    android:id="@+id/povijest_medicine"
+                    android:title="Povijest medicine"/>
+            </menu>
+        </item>
+
     </group>
 </menu>
