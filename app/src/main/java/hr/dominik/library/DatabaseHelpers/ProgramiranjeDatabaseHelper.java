@@ -61,7 +61,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
             insertProgramiranje(db,"Node.js Web razvoj","David Herron","840","2020",R.drawable.nodejs);
         }
         if (oldVersion < 2){
-
+            db.execSQL("ALTER TABLE DRINK ADD COLUMN FAVORITE NUMERIC;");
         }
 
     }

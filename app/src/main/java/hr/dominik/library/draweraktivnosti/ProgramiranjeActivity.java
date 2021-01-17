@@ -1,11 +1,15 @@
 package hr.dominik.library.draweraktivnosti;
 
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.ProgramiranjeDetailActivity;
 import hr.dominik.library.ProgramiranjeAdapter;
 import hr.dominik.library.ProgramiranjeKnjige;
 import hr.dominik.library.R;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -19,8 +23,8 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programiranje);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         gridView = findViewById(R.id.gridView);
+
 
         ArrayList<ProgramiranjeKnjige> courseModelArrayList = new ArrayList<ProgramiranjeKnjige>();
         courseModelArrayList.add(new ProgramiranjeKnjige("Naučite React:Prevod Drugog Izdanja","Pisac:Kirupa Činatambi","Stranice:298","Godina:2018.", R.drawable.react));
@@ -34,5 +38,15 @@ public class ProgramiranjeActivity extends AppCompatActivity {
 
         ProgramiranjeAdapter adapter = new ProgramiranjeAdapter(this, courseModelArrayList);
         gridView.setAdapter(adapter);
+
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ProgramiranjeActivity.this, ProgramiranjeDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

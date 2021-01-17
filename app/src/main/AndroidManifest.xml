@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
         <activity
+            android:name=".ProgramiranjeDetailActivity"
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
+        <activity
             android:name=".draweraktivnosti.FABActivity"
             android:label="Ovdje možete napisati upit!"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.PovijestMedicineActivity"
             android:label="Povijest Medicine"
