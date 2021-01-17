@@ -11,7 +11,7 @@ import hr.dominik.library.R;
 public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "programiranje";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
 
     public ProgramiranjeDatabaseHelper(@Nullable Context context) {
         super(context,DB_NAME,null,DB_VERSION);
@@ -19,23 +19,12 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE PROGRAMIRANJE ("
-                + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "IME_KNJIGE TEXT, "
-                + "PISAC TEXT, "
-                + "STRANICE TEXT, "
-                + "GODINA TEXT, "
-                + "SLIKA INTEGER);");
-
-        insertProgramiranje(db,"Naučite React:Prevod drugog izdanja","Kirupa Čitanambi","298","2018", R.drawable.react);
-        insertProgramiranje(db,"Arduino:Uvod u programiranje","Simon Monk","194","2017",R.drawable.arduino);
-        insertProgramiranje(db,"Demistificirani C++","Julijan Šribar","1112","2017",R.drawable.demistrificiranic);
-        insertProgramiranje(db,"Node.js Web razvoj","David Herron","840","2020",R.drawable.nodejs);
+        updateMyDatabase(db,0,DB_VERSION);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        updateMyDatabase(db,oldVersion,newVersion);
     }
 
     private static void insertProgramiranje(SQLiteDatabase db,
@@ -52,6 +41,28 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         programiranjeValues.put("GODINA",godina);
         programiranjeValues.put("SLIKA",slika);
         db.insert("PROGRAMIRANJE",null,programiranjeValues);
+
+    }
+
+    private void updateMyDatabase(SQLiteDatabase db,int oldVersion, int newVersion){
+
+        if (oldVersion < 1){
+            db.execSQL("CREATE TABLE PROGRAMIRANJE ("
+                    + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + "IME_KNJIGE TEXT, "
+                    + "PISAC TEXT, "
+                    + "STRANICE TEXT, "
+                    + "GODINA TEXT, "
+                    + "SLIKA INTEGER);");
+
+            insertProgramiranje(db,"Naučite React:Prevod drugog izdanja","Kirupa Čitanambi","298","2018", R.drawable.react);
+            insertProgramiranje(db,"Arduino:Uvod u programiranje","Simon Monk","194","2017",R.drawable.arduino);
+            insertProgramiranje(db,"Demistificirani C++","Julijan Šribar","1112","2017",R.drawable.demistrificiranic);
+            insertProgramiranje(db,"Node.js Web razvoj","David Herron","840","2020",R.drawable.nodejs);
+        }
+        if (oldVersion < 2){
+
+        }
 
     }
 
