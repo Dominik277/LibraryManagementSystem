@@ -1,7 +1,6 @@
 package hr.dominik.library.draweraktivnosti;
 
 import androidx.appcompat.app.AppCompatActivity;
-import hr.dominik.library.ProgramiranjeDetailActivity;
 import hr.dominik.library.ProgramiranjeAdapter;
 import hr.dominik.library.ProgramiranjeKnjige;
 import hr.dominik.library.R;
@@ -39,33 +38,5 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         ProgramiranjeAdapter adapter = new ProgramiranjeAdapter(this, courseModelArrayList);
         gridView.setAdapter(adapter);
 
-        ProgramiranjeKnjige programiranjeKnjige = new ProgramiranjeKnjige();
-
-/*
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ProgramiranjeActivity.this, ProgramiranjeDetailActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
- */
-
-        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ProgramiranjeActivity.this,ProgramiranjeDetailActivity.class);
-                intent.putExtra("id",id);
-                intent.putExtra("imeKnjige",programiranjeKnjige.getImeKnjige());
-                intent.putExtra("pisac",programiranjeKnjige.getPisac());
-                intent.putExtra("stranice",programiranjeKnjige.getStranice());
-                intent.putExtra("godina",programiranjeKnjige.getGodina());
-                intent.putExtra("slika",programiranjeKnjige.getSlika());
-                startActivity(intent);
-            }
-        };
-        gridView.setOnItemClickListener(itemClickListener);
     }
 }
