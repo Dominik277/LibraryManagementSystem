@@ -8,6 +8,10 @@ public class ProgramiranjeKnjige {
     private String godina;
     private int slika;
 
+    public ProgramiranjeKnjige(){
+
+    }
+
     public ProgramiranjeKnjige(String imeKnjige, String pisac, String stranice, String godina, int slika) {
         this.imeKnjige = imeKnjige;
         this.pisac = pisac;
