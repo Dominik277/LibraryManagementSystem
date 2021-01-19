@@ -30,7 +30,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
         ListAdapter adapter = new SimpleAdapter(ProgramiranjeActivity.this
-                                    , booksList
+                                    ,booksList
                                     ,R.layout.list_row
                                     ,new String[]{"name","author","pages"}
                                     ,new int[]{R.id.textViewName,R.id.textViewAuthor,R.id.textViewPages});

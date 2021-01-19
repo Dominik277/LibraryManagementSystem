@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "programiranje_db";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String TABLE_NAME = "programiranje";
     public static final String KEY_ID = "id";
     public static final String KEY_NAME = "name";
@@ -57,7 +57,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<HashMap<String,String>> getBooks(){
         SQLiteDatabase database = this.getWritableDatabase();
         ArrayList<HashMap<String,String>> booksList = new ArrayList<>();
-        String query = " SELECT name, author, pages FROM " +TABLE_NAME;
+        String query = " SELECT name,author,pages FROM " + TABLE_NAME;
         Cursor cursor = database.rawQuery(query,null);
         while (cursor.moveToNext()){
             HashMap<String,String> books = new HashMap<>();
