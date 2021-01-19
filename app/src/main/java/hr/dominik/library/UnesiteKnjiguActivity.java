@@ -9,11 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class UnesiteKnjiguActivity extends AppCompatActivity {
 
     Button gumbUnesiKnjigu;
     EditText editTextUnesiKnjigu;
+    EditText editTextUnesiAutora;
+    EditText editTextUnesiStranice;
     SQLiteDatabase database;
 
     @Override
@@ -25,12 +28,19 @@ public class UnesiteKnjiguActivity extends AppCompatActivity {
 
         gumbUnesiKnjigu = findViewById(R.id.gumbUnesiKnjigu);
         editTextUnesiKnjigu = findViewById(R.id.editTextUnesiKnjigu);
+        editTextUnesiAutora = findViewById(R.id.editTextUnesiAutora);
+        editTextUnesiStranice = findViewById(R.id.editTextUnesiStranice);
 
         gumbUnesiKnjigu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String knjiga = editTextUnesiKnjigu.getText().toString();
-                databaseHelper.insertBook(knjiga);
+                String autor = editTextUnesiAutora.getText().toString();
+                String stranice = editTextUnesiStranice.getText().toString();
+                ProgramiranjeDatabaseHelper databaseHelper =new ProgramiranjeDatabaseHelper(UnesiteKnjiguActivity.this);
+                databaseHelper.insertBook(knjiga,autor,stranice);
+                Toast.makeText(getApplicationContext(),"Knjiga unešena u bazu podataka"
+                        ,Toast.LENGTH_LONG).show();
             }
         });
     }
