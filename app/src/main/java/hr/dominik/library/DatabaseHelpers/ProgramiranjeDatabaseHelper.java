@@ -5,15 +5,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
 
 
 public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "programiranje_db";
-    private static final int DATABASE_VERSION = 1;
-    private static final String TABLE_NAME = "programiranje";
-    private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "name";
+    public static final String DATABASE_NAME = "programiranje_db";
+    public static final int DATABASE_VERSION = 1;
+    public static final String TABLE_NAME = "programiranje";
+    public static final String KEY_ID = "id";
+    public static final String KEY_NAME = "name";
 
     SQLiteDatabase database;
 
@@ -24,8 +25,8 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
-                + KEY_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + KEY_NAME + "TEXT" + ")";
+                + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + KEY_NAME + " TEXT " + ")";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -36,12 +37,15 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void insertBook(String name){
+        database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("name",name);
+        contentValues.put(ProgramiranjeDatabaseHelper.KEY_NAME,name);
         database.insert(TABLE_NAME,null,contentValues);
+        database.close();
     }
 
     public Cursor getBook(){
+        database = this.getReadableDatabase();
         String[] columns = new String[]{ProgramiranjeDatabaseHelper.KEY_ID,
                                         ProgramiranjeDatabaseHelper.KEY_NAME};
         Cursor cursor = database.query(ProgramiranjeDatabaseHelper.TABLE_NAME
@@ -54,6 +58,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updateBook(long id,String name){
+        database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name",name);
         int i = database.update(ProgramiranjeDatabaseHelper.TABLE_NAME
@@ -64,6 +69,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void deleteRow(long id){
+        database = this.getWritableDatabase();
         database.delete(TABLE_NAME,ProgramiranjeDatabaseHelper.KEY_ID + "=" + id,null);
     }
 
