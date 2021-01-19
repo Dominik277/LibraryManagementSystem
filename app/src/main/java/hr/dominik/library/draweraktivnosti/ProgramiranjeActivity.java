@@ -3,6 +3,7 @@ package hr.dominik.library.draweraktivnosti;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.ModifyActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.UnesiteKnjiguActivity;
 
@@ -50,7 +51,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
                 String autor = textViewAutor.getText().toString();
                 String stranice = textViewStranice.getText().toString();
 
-                Intent intent = new Intent(getApplicationContext(),ModifyActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ModifyActivity.class);
                 intent.putExtra("name",name);
                 intent.putExtra("author",autor);
                 intent.putExtra("pages",stranice);
