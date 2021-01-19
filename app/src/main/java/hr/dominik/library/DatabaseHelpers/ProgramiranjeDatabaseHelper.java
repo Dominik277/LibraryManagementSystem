@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "programiranje_db";
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 3;
     public static final String TABLE_NAME = "programiranje";
     public static final String KEY_ID = "id";
     public static final String KEY_NAME = "name";
@@ -87,7 +87,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return bookList;
     }
 
-    public int updateBook(String name,String author,String pages,int id){
+    public int updateBook(String name,String author,String pages){
         database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
@@ -95,16 +95,16 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(KEY_PAGES,pages);
         int count = database.update(TABLE_NAME
                 ,contentValues
-                ,KEY_ID + "=" + id
-                ,new String[]{String.valueOf(id)});
+                ,KEY_NAME + "=" + name
+                ,new String[]{String.valueOf(name)});
         return count;
     }
 
-    public void deleteRow(long id){
+    public void deleteRow(String name){
         database = this.getWritableDatabase();
         database.delete(TABLE_NAME
-                ,KEY_ID + " = ?"
-                ,new String[]{String.valueOf(id)});
+                ,KEY_NAME + " = ?"
+                ,new String[]{String.valueOf(name)});
     }
 
 }

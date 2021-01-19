@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class ModifyActivity extends AppCompatActivity implements View.OnClickListener {
+import java.sql.SQLException;
+
+public class ModifyActivity extends AppCompatActivity {
 
     private EditText editTextImeKnjige;
     private EditText editTextPisac;
@@ -42,10 +45,36 @@ public class ModifyActivity extends AppCompatActivity implements View.OnClickLis
         editTextPisac.setText(author);
         editTextStranice.setText(pages);
 
-        gumbUpdate.setOnClickListener(this);
-        gumbDelete.setOnClickListener(this);
-    }
+        gumbUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    String name = editTextImeKnjige.getText().toString();
+                    String author = editTextPisac.getText().toString();
+                    String pages = editTextStranice.getText().toString();
+                    databaseHelper.updateBook(name,author,pages);
+                }catch (Exception e){
+                    Toast toast = Toast.makeText(getApplicationContext(),"Nije moguće azurirati bazu podataka!"
+                            ,Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+        });
 
+        gumbDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    String nameKnjige = editTextImeKnjige.getText().toString();
+                    databaseHelper.deleteRow(nameKnjige);
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(),"Nije moguće obrisati zapis iz baze!",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+/*
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -56,8 +85,11 @@ public class ModifyActivity extends AppCompatActivity implements View.OnClickLis
                 databaseHelper.updateBook(name,author,pages);
 
             case R.id.gumbDelete:
-                databaseHelper.deleteRow();
+                String nameKnjige = editTextImeKnjige.getText().toString();
+                databaseHelper.deleteRow(nameKnjige);
                 break;
         }
     }
+
+ */
 }
