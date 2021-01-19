@@ -2,6 +2,7 @@ package hr.dominik.library.draweraktivnosti;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
 import hr.dominik.library.UnesiteKnjiguActivity;
 
@@ -9,10 +10,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ProgramiranjeActivity extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +25,16 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_programiranje);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
+        ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooks();
 
+        ListView listView = findViewById(R.id.listView);
+        ListAdapter adapter = new SimpleAdapter(ProgramiranjeActivity.this
+                                    , booksList
+                                    ,R.layout.list_row
+                                    ,new String[]{"name","author","pages"}
+                                    ,new int[]{R.id.textViewName,R.id.textViewAuthor,R.id.textViewPages});
+        listView.setAdapter(adapter);
 
     }
 
