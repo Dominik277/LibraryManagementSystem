@@ -5,6 +5,7 @@ import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,29 +49,18 @@ public class ModifyActivity extends AppCompatActivity {
         gumbUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
                     String name = editTextImeKnjige.getText().toString();
                     String author = editTextPisac.getText().toString();
                     String pages = editTextStranice.getText().toString();
                     databaseHelper.updateBook(name,author,pages);
-                }catch (Exception e){
-                    Toast toast = Toast.makeText(getApplicationContext(),"Nije moguće azurirati bazu podataka!"
-                            ,Toast.LENGTH_LONG);
-                    toast.show();
-                }
             }
         });
 
         gumbDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
                     String nameKnjige = editTextImeKnjige.getText().toString();
                     databaseHelper.deleteRow(nameKnjige);
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(),"Nije moguće obrisati zapis iz baze!",
-                            Toast.LENGTH_LONG).show();
-                }
             }
         });
     }

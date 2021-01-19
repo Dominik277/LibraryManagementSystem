@@ -6,11 +6,7 @@
     android:orientation="horizontal"
     android:padding="5dp">
 
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"/>
+
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"

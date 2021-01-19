@@ -3,6 +3,7 @@ package hr.dominik.library.draweraktivnosti;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.ItemClickActivity;
 import hr.dominik.library.ModifyActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.UnesiteKnjiguActivity;
@@ -17,6 +18,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,6 +41,14 @@ public class ProgramiranjeActivity extends AppCompatActivity {
                                     ,new String[]{"name","author","pages"}
                                     ,new int[]{R.id.textViewName,R.id.textViewAuthor,R.id.textViewPages});
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(ProgramiranjeActivity.this, ItemClickActivity.class));
+
+            }
+        });
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

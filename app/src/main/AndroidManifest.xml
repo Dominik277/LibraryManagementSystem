@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
-        <activity android:name=".ModifyActivity"></activity>
+        <activity
+            android:name=".ItemClickActivity"
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
+        <activity android:name=".ModifyActivity" />
         <activity android:name=".UnesiteKnjiguActivity" />
         <activity
             android:name=".draweraktivnosti.FABActivity"
