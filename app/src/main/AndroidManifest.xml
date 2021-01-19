@@ -19,50 +19,6 @@
             android:label="Ovdje možete napisati upit!"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".draweraktivnosti.PovijestMedicineActivity"
-            android:label="Povijest Medicine"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.SportskaMedicinaActivity"
-            android:label="Sportska Medicina"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.BioKemijaActivity"
-            android:label="Biokemija"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.AnatomijaActivity"
-            android:label="Anatomija"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.AnalitickaKemijaActivity"
-            android:label="Analiticka Kemija"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.FizikalnaKemijaActivity"
-            android:label="Fizikalna Kemija"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.OrganskaKemijaActivity"
-            android:label="Organska Kemija"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.RobotikaActivity"
-            android:label="Robotika"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.ElektrotehnikaActivity"
-            android:label="Elektrotehnika"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.EnergetikaActivity"
-            android:label="Energetika"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".draweraktivnosti.ElektronikaActivity"
-            android:label="Elektronika"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".draweraktivnosti.OperativniSustaviActivity"
             android:label="Operativni Sustavi"
             android:parentActivityName=".MainActivity" />
