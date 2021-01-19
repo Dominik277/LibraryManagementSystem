@@ -69,20 +69,42 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return booksList;
     }
 
-    public int updateBook(long id,String name){
+    public ArrayList<HashMap<String,String>> getBookById(int bookId){
+        SQLiteDatabase database = this.getWritableDatabase();
+        ArrayList<HashMap<String,String>> bookList = new ArrayList<>();
+        String query = "SELECT name, author, pages FROM " + TABLE_NAME;
+        Cursor cursor = database.query(TABLE_NAME,new String[]{KEY_NAME,KEY_AUTHOR,KEY_PAGES}
+                                    , KEY_ID + "=?"
+                                    ,new String[]{String.valueOf(bookId)}
+                                    ,null,null,null,null);
+        if (cursor.moveToNext()){
+            HashMap<String,String> book = new HashMap<>();
+            book.put("name",cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+            book.put("author",cursor.getString(cursor.getColumnIndex(KEY_AUTHOR)));
+            book.put("pages",cursor.getString(cursor.getColumnIndex(KEY_PAGES)));
+            bookList.add(book);
+        }
+        return bookList;
+    }
+
+    public int updateBook(String name,String author,String pages,int id){
         database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("name",name);
-        int i = database.update(ProgramiranjeDatabaseHelper.TABLE_NAME
+        contentValues.put(KEY_NAME,name);
+        contentValues.put(KEY_AUTHOR,author);
+        contentValues.put(KEY_PAGES,pages);
+        int count = database.update(TABLE_NAME
                 ,contentValues
-                ,ProgramiranjeDatabaseHelper.KEY_ID + "=" + id
-                ,null);
-        return i;
+                ,KEY_ID + "=" + id
+                ,new String[]{String.valueOf(id)});
+        return count;
     }
 
     public void deleteRow(long id){
         database = this.getWritableDatabase();
-        database.delete(TABLE_NAME,ProgramiranjeDatabaseHelper.KEY_ID + "=" + id,null);
+        database.delete(TABLE_NAME
+                ,KEY_ID + " = ?"
+                ,new String[]{String.valueOf(id)});
     }
 
 }
