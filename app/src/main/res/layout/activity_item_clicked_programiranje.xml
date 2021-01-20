@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="40dp"
-    tools:context=".ItemClickActivity">
+    tools:context=".ItemClickActivity.ItemClickProgramiranjeActivity">
 
     <TextView
         android:layout_width="wrap_content"
