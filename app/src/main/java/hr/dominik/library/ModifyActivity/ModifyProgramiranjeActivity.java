@@ -12,11 +12,11 @@ import hr.dominik.library.R;
 
 public class ModifyProgramiranjeActivity extends AppCompatActivity {
 
-    private EditText editTextImeKnjige;
-    private EditText editTextPisac;
-    private EditText editTextStranice;
-    private Button gumbUpdate;
-    private Button gumbDelete;
+    private EditText editTextImeKnjigeProgramiranje;
+    private EditText editTextPisacProgramiranje;
+    private EditText editTextStraniceProgramiranje;
+    private Button gumbUpdateProgramiranje;
+    private Button gumbDeleteProgramiranje;
     private long _id;
 
     private ProgramiranjeDatabaseHelper databaseHelper;
@@ -27,36 +27,36 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_modify_programiranje);
         setTitle("Azurirajte podatke");
 
-        editTextImeKnjige = findViewById(R.id.modify_nameProgramiranje);
-        editTextPisac = findViewById(R.id.modify_authorProgramiranje);
-        editTextStranice = findViewById(R.id.modify_pagesProgramiranje);
+        editTextImeKnjigeProgramiranje = findViewById(R.id.modify_nameProgramiranje);
+        editTextPisacProgramiranje = findViewById(R.id.modify_authorProgramiranje);
+        editTextStraniceProgramiranje = findViewById(R.id.modify_pagesProgramiranje);
 
-        gumbUpdate = findViewById(R.id.gumbUpdateProgramiranje);
-        gumbDelete = findViewById(R.id.gumbDeleteProgramiranje);
+        gumbUpdateProgramiranje = findViewById(R.id.gumbUpdateProgramiranje);
+        gumbDeleteProgramiranje = findViewById(R.id.gumbDeleteProgramiranje);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String author = intent.getStringExtra("author");
         String pages = intent.getStringExtra("pages");
 
-        editTextImeKnjige.setText(name);
-        editTextPisac.setText(author);
-        editTextStranice.setText(pages);
+        editTextImeKnjigeProgramiranje.setText(name);
+        editTextPisacProgramiranje.setText(author);
+        editTextStraniceProgramiranje.setText(pages);
 
-        gumbUpdate.setOnClickListener(new View.OnClickListener() {
+        gumbUpdateProgramiranje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    String name = editTextImeKnjige.getText().toString();
-                    String author = editTextPisac.getText().toString();
-                    String pages = editTextStranice.getText().toString();
+                    String name = editTextImeKnjigeProgramiranje.getText().toString();
+                    String author = editTextPisacProgramiranje.getText().toString();
+                    String pages = editTextStraniceProgramiranje.getText().toString();
                     databaseHelper.updateBookProgramiranje(name,author,pages);
             }
         });
 
-        gumbDelete.setOnClickListener(new View.OnClickListener() {
+        gumbDeleteProgramiranje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    String nameKnjige = editTextImeKnjige.getText().toString();
+                    String nameKnjige = editTextImeKnjigeProgramiranje.getText().toString();
                     databaseHelper.deleteRowProgramiranje(nameKnjige);
             }
         });
