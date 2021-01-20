@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".UnesiteKnjiguActivity">
+    tools:context=".UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,30 +18,29 @@
         android:textSize="22dp"
         android:layout_gravity="center_horizontal"/>
     <EditText
-        android:id="@+id/editTextUnesiKnjigu"
+        android:id="@+id/editTextUnesiKnjiguProgramiranje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:hint="Ovdje upišite novu knjigu"/>
     <EditText
-        android:id="@+id/editTextUnesiAutora"
+        android:id="@+id/editTextUnesiAutoraProgramiranje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:hint="Ovdje upišite ime autora"/>
     <EditText
-        android:id="@+id/editTextUnesiStranice"
+        android:id="@+id/editTextUnesiStraniceProgramiranje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:hint="Ovdje upišite broj stranica"/>
     <Button
-        android:id="@+id/gumbUnesiKnjigu"
+        android:id="@+id/gumbUnesiKnjiguProgramiranje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_gravity="center_horizontal"
         android:text="Unesi"
         android:textSize="25dp"/>
-
 </LinearLayout>

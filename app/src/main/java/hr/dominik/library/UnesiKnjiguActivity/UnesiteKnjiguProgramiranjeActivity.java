@@ -26,10 +26,10 @@ public class UnesiteKnjiguProgramiranjeActivity extends AppCompatActivity {
 
         ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
 
-        gumbUnesiKnjigu = findViewById(R.id.gumbUnesiKnjigu);
-        editTextUnesiKnjigu = findViewById(R.id.editTextUnesiKnjigu);
-        editTextUnesiAutora = findViewById(R.id.editTextUnesiAutora);
-        editTextUnesiStranice = findViewById(R.id.editTextUnesiStranice);
+        gumbUnesiKnjigu = findViewById(R.id.gumbUnesiKnjiguProgramiranje);
+        editTextUnesiKnjigu = findViewById(R.id.editTextUnesiKnjiguProgramiranje);
+        editTextUnesiAutora = findViewById(R.id.editTextUnesiAutoraProgramiranje);
+        editTextUnesiStranice = findViewById(R.id.editTextUnesiStraniceProgramiranje);
 
         gumbUnesiKnjigu.setOnClickListener(new View.OnClickListener() {
             @Override
