@@ -10,7 +10,7 @@ public class ItemClickProgramiranjeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_click);
+        setContentView(R.layout.activity_item_clicked_programiranje);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Item Clicked");
     }

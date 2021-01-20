@@ -33,7 +33,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksProgramiranje();
 
-        ListView listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listViewProgramiranje);
         ListAdapter adapter = new SimpleAdapter(ProgramiranjeActivity.this
                                     ,booksList
                                     ,R.layout.list_row
