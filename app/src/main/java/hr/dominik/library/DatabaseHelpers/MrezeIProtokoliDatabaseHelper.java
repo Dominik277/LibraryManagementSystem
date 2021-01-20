@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "mreze_i_protokoli_db";
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 1;
     public static final String TABLE_NAME = "mreze_i_protokoli";
     public static final String KEY_ID = "id";
     public static final String KEY_NAME = "name";
