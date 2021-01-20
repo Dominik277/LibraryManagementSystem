@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
         <activity
-            android:name=".ItemClickActivity"
-            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
-        <activity android:name=".ModifyActivity" />
-        <activity android:name=".UnesiteKnjiguActivity" />
-        <activity
             android:name=".draweraktivnosti.FABActivity"
             android:label="Ovdje možete napisati upit!"
             android:parentActivityName=".MainActivity" />
@@ -32,6 +27,18 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".draweraktivnosti.ProgramiranjeActivity"
+            android:label="Programiranje"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ItemClickActivity.ItemClickProgramiranjeActivity"
+            android:label="Programiranje"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ModifyActivity.ModifyProgramiranjeActivity"
+            android:label="Programiranje"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity"
             android:label="Programiranje"
             android:parentActivityName=".MainActivity" />
         <activity

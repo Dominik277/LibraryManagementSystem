@@ -1,19 +1,16 @@
-package hr.dominik.library;
-
-import androidx.appcompat.app.AppCompatActivity;
-import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+package hr.dominik.library.ModifyActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import java.sql.SQLException;
+import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.R;
 
-public class ModifyActivity extends AppCompatActivity {
+public class ModifyProgramiranjeActivity extends AppCompatActivity {
 
     private EditText editTextImeKnjige;
     private EditText editTextPisac;

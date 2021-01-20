@@ -1,9 +1,5 @@
-package hr.dominik.library;
+package hr.dominik.library.UnesiKnjiguActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
-
-import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class UnesiteKnjiguActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.R;
+
+public class UnesiteKnjiguProgramiranjeActivity extends AppCompatActivity {
 
     Button gumbUnesiKnjigu;
     EditText editTextUnesiKnjigu;
@@ -37,7 +37,7 @@ public class UnesiteKnjiguActivity extends AppCompatActivity {
                 String knjiga = editTextUnesiKnjigu.getText().toString();
                 String autor = editTextUnesiAutora.getText().toString();
                 String stranice = editTextUnesiStranice.getText().toString();
-                ProgramiranjeDatabaseHelper databaseHelper =new ProgramiranjeDatabaseHelper(UnesiteKnjiguActivity.this);
+                ProgramiranjeDatabaseHelper databaseHelper =new ProgramiranjeDatabaseHelper(UnesiteKnjiguProgramiranjeActivity.this);
                 databaseHelper.insertBook(knjiga,autor,stranice);
                 Toast.makeText(getApplicationContext(),"Knjiga unešena u bazu podataka"
                         ,Toast.LENGTH_LONG).show();

@@ -3,10 +3,10 @@ package hr.dominik.library.draweraktivnosti;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
-import hr.dominik.library.ItemClickActivity;
-import hr.dominik.library.ModifyActivity;
+import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
+import hr.dominik.library.ModifyActivity.ModifyProgramiranjeActivity;
 import hr.dominik.library.R;
-import hr.dominik.library.UnesiteKnjiguActivity;
+import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +44,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(ProgramiranjeActivity.this, ItemClickActivity.class));
+                startActivity(new Intent(ProgramiranjeActivity.this, ItemClickProgramiranjeActivity.class));
 
             }
         });
@@ -61,7 +60,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
                 String autor = textViewAutor.getText().toString();
                 String stranice = textViewStranice.getText().toString();
 
-                Intent intent = new Intent(getApplicationContext(), ModifyActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ModifyProgramiranjeActivity.class);
                 intent.putExtra("name",name);
                 intent.putExtra("author",autor);
                 intent.putExtra("pages",stranice);
@@ -81,7 +80,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        startActivity(new Intent(ProgramiranjeActivity.this, UnesiteKnjiguActivity.class));
+        startActivity(new Intent(ProgramiranjeActivity.this, UnesiteKnjiguProgramiranjeActivity.class));
         return true;
     }
 }

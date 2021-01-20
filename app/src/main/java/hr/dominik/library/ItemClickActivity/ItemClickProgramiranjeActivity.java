@@ -1,10 +1,11 @@
-package hr.dominik.library;
-
-import androidx.appcompat.app.AppCompatActivity;
+package hr.dominik.library.ItemClickActivity;
 
 import android.os.Bundle;
 
-public class ItemClickActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.R;
+
+public class ItemClickProgramiranjeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
