@@ -24,7 +24,7 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modify);
+        setContentView(R.layout.activity_modify_programiranje);
         setTitle("Azurirajte podatke");
 
         editTextImeKnjige = findViewById(R.id.modify_name);
