@@ -11,5 +11,7 @@ public class ItemClickedHardverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_clicked_hardver);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Item Clicked");
     }
 }

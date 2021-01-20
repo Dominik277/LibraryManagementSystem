@@ -11,5 +11,7 @@ public class ItemClickedMrezeIProtokoliActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_clicked_mreze_i_protokoli);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Item Clicked");
     }
 }

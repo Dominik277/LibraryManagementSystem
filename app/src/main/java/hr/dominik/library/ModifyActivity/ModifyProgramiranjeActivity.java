@@ -27,12 +27,12 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_modify_programiranje);
         setTitle("Azurirajte podatke");
 
-        editTextImeKnjige = findViewById(R.id.modify_name);
-        editTextPisac = findViewById(R.id.modify_author);
-        editTextStranice = findViewById(R.id.modify_pages);
+        editTextImeKnjige = findViewById(R.id.modify_nameProgramiranje);
+        editTextPisac = findViewById(R.id.modify_authorProgramiranje);
+        editTextStranice = findViewById(R.id.modify_pagesProgramiranje);
 
-        gumbUpdate = findViewById(R.id.gumbUpdate);
-        gumbDelete = findViewById(R.id.gumbDelete);
+        gumbUpdate = findViewById(R.id.gumbUpdateProgramiranje);
+        gumbDelete = findViewById(R.id.gumbDeleteProgramiranje);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");

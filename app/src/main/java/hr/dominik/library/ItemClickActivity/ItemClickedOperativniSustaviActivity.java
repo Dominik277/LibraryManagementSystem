@@ -11,5 +11,7 @@ public class ItemClickedOperativniSustaviActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_clicked_operativni_sustavi);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Item Clicked");
     }
 }
