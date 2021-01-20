@@ -2,14 +2,12 @@ package hr.dominik.library.draweraktivnosti;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
-import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedMrezeIProtokoliActivity;
 import hr.dominik.library.ModifyActivity.ModifyMrezeIProtokoliActivity;
-import hr.dominik.library.ModifyActivity.ModifyProgramiranjeActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguMrezeIProtokoliActivity;
-import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,15 +31,15 @@ public class MrezeIProtokoliActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mreze_i_protokoli);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
-        ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksProgramiranje();
+        MrezeIProtokoliDatabaseHelper databaseHelper = new MrezeIProtokoliDatabaseHelper(this);
+        ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksMrezeIProtokoli();
 
         ListView listView = findViewById(R.id.listViewMrezeIProtokoli);
         ListAdapter adapter = new SimpleAdapter(MrezeIProtokoliActivity.this
                 ,booksList
-                ,R.layout.list_row
+                ,R.layout.list_row_mreze_i_protokoli
                 ,new String[]{"name","author","pages"}
-                ,new int[]{R.id.textViewName,R.id.textViewAuthor,R.id.textViewPages});
+                ,new int[]{R.id.textViewNameMrezeIProtokoli,R.id.textViewAuthorMrezeIProtokoli,R.id.textViewPagesMrezeIProtokoli});
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,9 +53,9 @@ public class MrezeIProtokoliActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textViewName = view.findViewById(R.id.textViewName);
-                TextView textViewAutor = view.findViewById(R.id.textViewAuthor);
-                TextView textViewStranice = view.findViewById(R.id.textViewPages);
+                TextView textViewName = view.findViewById(R.id.textViewNameMrezeIProtokoli);
+                TextView textViewAutor = view.findViewById(R.id.textViewAuthorMrezeIProtokoli);
+                TextView textViewStranice = view.findViewById(R.id.textViewPagesMrezeIProtokoli);
 
                 String name = textViewName.getText().toString();
                 String autor = textViewAutor.getText().toString();

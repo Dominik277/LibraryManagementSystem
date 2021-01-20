@@ -6,29 +6,28 @@
     android:orientation="horizontal"
     android:padding="5dp">
 
-
     <TextView
-        android:id="@+id/textViewName"
+        android:id="@+id/textViewNameHardver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17dp"
         android:textStyle="bold"/>
     <TextView
-        android:id="@+id/textViewAuthor"
+        android:id="@+id/textViewAuthorHardver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:textColor="#000"
-        android:layout_below="@+id/textViewName"/>
+        android:layout_below="@+id/textViewNameHardver"/>
     <TextView
-        android:id="@+id/textViewPages"
+        android:id="@+id/textViewPagesHardver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textViewAuthor"
-        android:layout_alignBottom="@id/textViewAuthor"
+        android:layout_alignBaseline="@+id/textViewAuthorHardver"
+        android:layout_alignBottom="@id/textViewAuthorHardver"
         android:layout_alignParentRight="true"
         android:textSize="14dp"
         android:textColor="#000"
-        android:layout_below="@+id/textViewAuthor"/>
+        android:layout_below="@+id/textViewAuthorHardver"/>
 
 </RelativeLayout>

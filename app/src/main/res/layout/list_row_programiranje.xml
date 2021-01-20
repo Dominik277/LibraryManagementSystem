@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+
+    <TextView
+        android:id="@+id/textViewNameProgramiranje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/textViewAuthorProgramiranje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:textColor="#000"
+        android:layout_below="@+id/textViewNameProgramiranje"/>
+    <TextView
+        android:id="@+id/textViewPagesProgramiranje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewAuthorProgramiranje"
+        android:layout_alignBottom="@id/textViewAuthorProgramiranje"
+        android:layout_alignParentRight="true"
+        android:textSize="14dp"
+        android:textColor="#000"
+        android:layout_below="@+id/textViewAuthorProgramiranje"/>
+
+</RelativeLayout>

@@ -36,9 +36,9 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.listViewProgramiranje);
         ListAdapter adapter = new SimpleAdapter(ProgramiranjeActivity.this
                                     ,booksList
-                                    ,R.layout.list_row
+                                    ,R.layout.list_row_programiranje
                                     ,new String[]{"name","author","pages"}
-                                    ,new int[]{R.id.textViewName,R.id.textViewAuthor,R.id.textViewPages});
+                                    ,new int[]{R.id.textViewNameProgramiranje,R.id.textViewAuthorProgramiranje,R.id.textViewPagesProgramiranje});
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -52,9 +52,9 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textViewName = view.findViewById(R.id.textViewName);
-                TextView textViewAutor = view.findViewById(R.id.textViewAuthor);
-                TextView textViewStranice = view.findViewById(R.id.textViewPages);
+                TextView textViewName = view.findViewById(R.id.textViewNameProgramiranje);
+                TextView textViewAutor = view.findViewById(R.id.textViewAuthorProgramiranje);
+                TextView textViewStranice = view.findViewById(R.id.textViewPagesProgramiranje);
 
                 String name = textViewName.getText().toString();
                 String autor = textViewAutor.getText().toString();

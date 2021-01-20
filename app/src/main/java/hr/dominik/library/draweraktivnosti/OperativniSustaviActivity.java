@@ -2,14 +2,12 @@ package hr.dominik.library.draweraktivnosti;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.DatabaseHelpers.OperativniSustaviDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
-import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedOperativniSustaviActivity;
 import hr.dominik.library.ModifyActivity.ModifyOperativniSustaviActivity;
-import hr.dominik.library.ModifyActivity.ModifyProgramiranjeActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguOperativniSustaviActivity;
-import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,15 +31,15 @@ public class OperativniSustaviActivity extends AppCompatActivity {
         setContentView(R.layout.activity_operativni_sustavi);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
-        ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksProgramiranje();
+        OperativniSustaviDatabaseHelper databaseHelper = new OperativniSustaviDatabaseHelper(this);
+        ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksOperativniSustavi();
 
         ListView listView = findViewById(R.id.listViewOperativniSustavi);
         ListAdapter adapter = new SimpleAdapter(OperativniSustaviActivity.this
                 ,booksList
-                ,R.layout.list_row
+                ,R.layout.list_row_operativni_sustavi
                 ,new String[]{"name","author","pages"}
-                ,new int[]{R.id.textViewName,R.id.textViewAuthor,R.id.textViewPages});
+                ,new int[]{R.id.textViewNameOperativniSustavi,R.id.textViewAuthorOperativniSustavi,R.id.textViewPagesOperativniSustavi});
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,9 +53,9 @@ public class OperativniSustaviActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textViewName = view.findViewById(R.id.textViewName);
-                TextView textViewAutor = view.findViewById(R.id.textViewAuthor);
-                TextView textViewStranice = view.findViewById(R.id.textViewPages);
+                TextView textViewName = view.findViewById(R.id.textViewNameOperativniSustavi);
+                TextView textViewAutor = view.findViewById(R.id.textViewAuthorOperativniSustavi);
+                TextView textViewStranice = view.findViewById(R.id.textViewPagesOperativniSustavi);
 
                 String name = textViewName.getText().toString();
                 String autor = textViewAutor.getText().toString();
