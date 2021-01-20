@@ -38,7 +38,7 @@ public class UnesiteKnjiguProgramiranjeActivity extends AppCompatActivity {
                 String autor = editTextUnesiAutora.getText().toString();
                 String stranice = editTextUnesiStranice.getText().toString();
                 ProgramiranjeDatabaseHelper databaseHelper =new ProgramiranjeDatabaseHelper(UnesiteKnjiguProgramiranjeActivity.this);
-                databaseHelper.insertBook(knjiga,autor,stranice);
+                databaseHelper.insertBookProgramiranje(knjiga,autor,stranice);
                 Toast.makeText(getApplicationContext(),"Knjiga unešena u bazu podataka"
                         ,Toast.LENGTH_LONG).show();
             }

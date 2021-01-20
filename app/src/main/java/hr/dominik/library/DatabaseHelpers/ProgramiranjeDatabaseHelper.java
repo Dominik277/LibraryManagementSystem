@@ -44,7 +44,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertBook(String name,String author,String pages){
+    public void insertBookProgramiranje(String name, String author, String pages){
         database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
@@ -54,7 +54,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public ArrayList<HashMap<String,String>> getBooks(){
+    public ArrayList<HashMap<String,String>> getBooksProgramiranje(){
         SQLiteDatabase database = this.getWritableDatabase();
         ArrayList<HashMap<String,String>> booksList = new ArrayList<>();
         String query = " SELECT name,author,pages FROM " + TABLE_NAME;
@@ -69,7 +69,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return booksList;
     }
 
-    public ArrayList<HashMap<String,String>> getBookById(int bookId){
+    public ArrayList<HashMap<String,String>> getBookByIdProgramiranje(int bookId){
         SQLiteDatabase database = this.getWritableDatabase();
         ArrayList<HashMap<String,String>> bookList = new ArrayList<>();
         String query = "SELECT name, author, pages FROM " + TABLE_NAME;
@@ -87,7 +87,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return bookList;
     }
 
-    public int updateBook(String name,String author,String pages){
+    public int updateBookProgramiranje(String name, String author, String pages){
         database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
@@ -100,7 +100,7 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public void deleteRow(String name){
+    public void deleteRowProgramiranje(String name){
         database = this.getWritableDatabase();
         database.delete(TABLE_NAME
                 ,KEY_NAME + " = ?"

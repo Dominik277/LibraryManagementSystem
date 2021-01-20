@@ -49,7 +49,7 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
                     String name = editTextImeKnjige.getText().toString();
                     String author = editTextPisac.getText().toString();
                     String pages = editTextStranice.getText().toString();
-                    databaseHelper.updateBook(name,author,pages);
+                    databaseHelper.updateBookProgramiranje(name,author,pages);
             }
         });
 
@@ -57,7 +57,7 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                     String nameKnjige = editTextImeKnjige.getText().toString();
-                    databaseHelper.deleteRow(nameKnjige);
+                    databaseHelper.deleteRowProgramiranje(nameKnjige);
             }
         });
     }
