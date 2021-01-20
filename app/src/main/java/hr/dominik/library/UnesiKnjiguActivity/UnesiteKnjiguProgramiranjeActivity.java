@@ -22,7 +22,7 @@ public class UnesiteKnjiguProgramiranjeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_unesite_knjigu);
+        setContentView(R.layout.activity_unesite_knjigu_programiranje);
 
         ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
 

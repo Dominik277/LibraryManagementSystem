@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
-        <activity android:name=".ModifyActivity.ModifyOperativniSustaviActivity"></activity>
+        <activity android:name=".UnesiKnjiguActivity.UnesiteKnjiguOperativniSustaviActivity"></activity>
+        <activity android:name=".UnesiKnjiguActivity.UnesiteKnjiguMrezeIProtokoliActivity" />
+        <activity android:name=".UnesiKnjiguActivity.UnesiteKnjiguHardverActivity" />
+        <activity android:name=".ModifyActivity.ModifyOperativniSustaviActivity" />
         <activity android:name=".ModifyActivity.ModifyMrezeIProtokoliActivity" />
         <activity android:name=".ModifyActivity.ModifyHardverActivity" />
         <activity android:name=".ItemClickActivity.ItemClickedOperativniSustaviActivity" />
