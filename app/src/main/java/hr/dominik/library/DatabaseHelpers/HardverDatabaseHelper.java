@@ -98,13 +98,6 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public void deleteRowHardver(String name){
-        databaseHardver = this.getWritableDatabase();
-        databaseHardver.delete(TABLE_NAME
-                ,KEY_NAME + " = ?"
-                ,new String[]{String.valueOf(name)});
-    }
-
     public void deleteItemHardver(String name){
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");

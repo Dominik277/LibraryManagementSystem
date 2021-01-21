@@ -43,13 +43,16 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
         editTextPisacProgramiranje.setText(author);
         editTextStraniceProgramiranje.setText(pages);
 
+        String oldName = editTextImeKnjigeProgramiranje.getText().toString();
+
         gumbUpdateProgramiranje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                    databaseHelper = new ProgramiranjeDatabaseHelper(getApplicationContext());
                     String name = editTextImeKnjigeProgramiranje.getText().toString();
                     String author = editTextPisacProgramiranje.getText().toString();
                     String pages = editTextStraniceProgramiranje.getText().toString();
-                    databaseHelper.updateBookProgramiranje(name,author,pages);
+                    databaseHelper.updateItemProgramiranje(name,author,pages,oldName);
             }
         });
 

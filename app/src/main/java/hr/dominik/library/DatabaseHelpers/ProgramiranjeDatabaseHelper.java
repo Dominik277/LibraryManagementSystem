@@ -98,17 +98,19 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
                 ,new String[]{String.valueOf(name)});
     }
 
-    public void deleteRowProgramiranje(String name){
-        databaseProgramiranje = this.getWritableDatabase();
-        databaseProgramiranje.delete(TABLE_NAME
-                ,KEY_NAME + " = ?"
-                ,new String[]{String.valueOf(name)});
-    }
-
-
     public void deleteItemProgramiranje(String name){
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
+    }
+
+    public int updateItemProgramiranje(String name, String author, String pages,String oldName){
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(KEY_NAME,name);
+        contentValues.put(KEY_AUTHOR,author);
+        contentValues.put(KEY_PAGES,pages);
+        int i = database.update(TABLE_NAME,contentValues,"name = ?",new String[]{oldName});
+        return i;
     }
 
 }

@@ -98,13 +98,6 @@ public class OperativniSustaviDatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public void deleteRowOperativniSustavi(String name){
-        databaseOperativniSustavi = this.getWritableDatabase();
-        databaseOperativniSustavi.delete(TABLE_NAME
-                ,KEY_NAME + " = ?"
-                ,new String[]{String.valueOf(name)});
-    }
-
     public void deleteItemOperativniSustavi(String name){
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");

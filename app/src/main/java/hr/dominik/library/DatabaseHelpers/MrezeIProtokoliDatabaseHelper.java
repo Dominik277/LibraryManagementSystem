@@ -98,13 +98,6 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public void deleteRowMrezeIProtokoli(String name){
-        databaseMrezeIProtokoli = this.getWritableDatabase();
-        databaseMrezeIProtokoli.delete(TABLE_NAME
-                ,KEY_NAME + " = ?"
-                ,new String[]{String.valueOf(name)});
-    }
-
     public void deleteItemMrezeIProtokoli(String name){
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
