@@ -1,5 +1,6 @@
 package hr.dominik.library.ItemClickActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,9 @@ public class ItemClickProgramiranjeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_clicked_programiranje);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Item Clicked");
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        setTitle("Informacije o " + name);
     }
 }

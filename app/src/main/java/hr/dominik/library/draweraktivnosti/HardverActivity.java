@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedHardverActivity;
 import hr.dominik.library.ModifyActivity.ModifyHardverActivity;
 import hr.dominik.library.R;
@@ -30,6 +31,7 @@ public class HardverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardver);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Hardver");
 
         HardverDatabaseHelper databaseHelper = new HardverDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksHardver();
@@ -45,7 +47,12 @@ public class HardverActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(HardverActivity.this, ItemClickedHardverActivity.class));
+                TextView textViewName = view.findViewById(R.id.textViewNameHardver);
+                String name = textViewName.getText().toString();
+
+                Intent intent = new Intent(HardverActivity.this, ItemClickedHardverActivity.class);
+                intent.putExtra("name",name);
+                startActivity(intent);
 
             }
         });

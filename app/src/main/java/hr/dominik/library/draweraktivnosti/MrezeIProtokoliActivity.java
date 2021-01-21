@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedMrezeIProtokoliActivity;
 import hr.dominik.library.ModifyActivity.ModifyMrezeIProtokoliActivity;
 import hr.dominik.library.R;
@@ -30,6 +31,7 @@ public class MrezeIProtokoliActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mreze_i_protokoli);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Mreze i Protokoli");
 
         MrezeIProtokoliDatabaseHelper databaseHelper = new MrezeIProtokoliDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksMrezeIProtokoli();
@@ -45,7 +47,12 @@ public class MrezeIProtokoliActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(MrezeIProtokoliActivity.this, ItemClickedMrezeIProtokoliActivity.class));
+                TextView textViewName = view.findViewById(R.id.textViewNameMrezeIProtokoli);
+                String name = textViewName.getText().toString();
+
+                Intent intent = new Intent(MrezeIProtokoliActivity.this, ItemClickedMrezeIProtokoliActivity.class);
+                intent.putExtra("name",name);
+                startActivity(intent);
 
             }
         });

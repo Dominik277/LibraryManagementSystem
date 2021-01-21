@@ -29,6 +29,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programiranje);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Programiranje");
 
         ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksProgramiranje();
@@ -44,7 +45,12 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(ProgramiranjeActivity.this, ItemClickProgramiranjeActivity.class));
+                TextView textViewName = view.findViewById(R.id.textViewNameProgramiranje);
+                String name = textViewName.getText().toString();
+
+                Intent intent = new Intent(ProgramiranjeActivity.this,ItemClickProgramiranjeActivity.class);
+                intent.putExtra("name",name);
+                startActivity(intent);
 
             }
         });

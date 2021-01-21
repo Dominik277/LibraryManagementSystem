@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.OperativniSustaviDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedOperativniSustaviActivity;
 import hr.dominik.library.ModifyActivity.ModifyOperativniSustaviActivity;
 import hr.dominik.library.R;
@@ -30,6 +31,7 @@ public class OperativniSustaviActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operativni_sustavi);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Operativni Sustavi");
 
         OperativniSustaviDatabaseHelper databaseHelper = new OperativniSustaviDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksOperativniSustavi();
@@ -45,7 +47,12 @@ public class OperativniSustaviActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(OperativniSustaviActivity.this, ItemClickedOperativniSustaviActivity.class));
+                TextView textViewName = view.findViewById(R.id.textViewNameOperativniSustavi);
+                String name = textViewName.getText().toString();
+
+                Intent intent = new Intent(OperativniSustaviActivity.this, ItemClickedOperativniSustaviActivity.class);
+                intent.putExtra("name",name);
+                startActivity(intent);
 
             }
         });
