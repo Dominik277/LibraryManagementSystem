@@ -3,6 +3,7 @@ package hr.dominik.library.ModifyActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
+import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
 
 import android.content.Intent;
@@ -20,7 +21,7 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
     private Button gumbUpdateMrezeIProtokoli;
     private Button gumbDeleteMrezeIProtokoli;
 
-    private MrezeIProtokoliDatabaseHelper databaseHelper;
+    private MrezeIProtokoliDatabaseHelper databaseHelperMrezeIProtokoli;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +44,16 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
         editTextPisacMrezeIProtokoli.setText(author);
         editTextStraniceMrezeIProtokoli.setText(pages);
 
+        String oldName = editTextImeKnjigeMrezeIProtokoli.getText().toString();
+
         gumbUpdateMrezeIProtokoli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                databaseHelperMrezeIProtokoli = new MrezeIProtokoliDatabaseHelper(getApplicationContext());
                 String name = editTextImeKnjigeMrezeIProtokoli.getText().toString();
                 String author = editTextPisacMrezeIProtokoli.getText().toString();
                 String pages = editTextStraniceMrezeIProtokoli.getText().toString();
-                databaseHelper.updateBookMrezeIProtokoli(name,author,pages);
+                databaseHelperMrezeIProtokoli.updateItemMrezeIProtokoli(name,author,pages,oldName);
             }
         });
 
@@ -57,8 +61,8 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeMrezeIProtokoli.getText().toString();
-                databaseHelper = new MrezeIProtokoliDatabaseHelper(getApplicationContext());
-                databaseHelper.deleteItemMrezeIProtokoli(nameKnjige);
+                databaseHelperMrezeIProtokoli = new MrezeIProtokoliDatabaseHelper(getApplicationContext());
+                databaseHelperMrezeIProtokoli.deleteItemMrezeIProtokoli(nameKnjige);
             }
         });
     }

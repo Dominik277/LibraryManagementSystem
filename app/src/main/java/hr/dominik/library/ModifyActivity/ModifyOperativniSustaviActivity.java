@@ -3,6 +3,7 @@ package hr.dominik.library.ModifyActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.OperativniSustaviDatabaseHelper;
+import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
 
 import android.content.Intent;
@@ -19,7 +20,7 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
     private Button gumbUpdateOperativniSustavi;
     private Button gumbDeleteOperativniSustavi;
 
-    private OperativniSustaviDatabaseHelper databaseHelper;
+    private OperativniSustaviDatabaseHelper databaseHelperOperativniSustavi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +43,16 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
         editTextPisacOperativniSustavi.setText(author);
         editTextStraniceOperativniSustavi.setText(pages);
 
+        String oldName = editTextImeKnjigeOperativniSustavi.getText().toString();
+
         gumbUpdateOperativniSustavi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                databaseHelperOperativniSustavi = new OperativniSustaviDatabaseHelper(getApplicationContext());
                 String name = editTextImeKnjigeOperativniSustavi.getText().toString();
                 String author = editTextPisacOperativniSustavi.getText().toString();
                 String pages = editTextStraniceOperativniSustavi.getText().toString();
-                databaseHelper.updateBookOperativniSustavi(name,author,pages);
+                databaseHelperOperativniSustavi.updateItemOperativniSustavi(name,author,pages,oldName);
             }
         });
 
@@ -56,8 +60,8 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeOperativniSustavi.getText().toString();
-                databaseHelper = new OperativniSustaviDatabaseHelper(getApplicationContext());
-                databaseHelper.deleteItemOperativniSustavi(nameKnjige);
+                databaseHelperOperativniSustavi = new OperativniSustaviDatabaseHelper(getApplicationContext());
+                databaseHelperOperativniSustavi.deleteItemOperativniSustavi(nameKnjige);
             }
         });
     }

@@ -20,7 +20,7 @@ public class ModifyHardverActivity extends AppCompatActivity {
     private Button gumbUpdateHardver;
     private Button gumbDeleteHardver;
 
-    private HardverDatabaseHelper databaseHelper;
+    private HardverDatabaseHelper databaseHelperHardver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +43,16 @@ public class ModifyHardverActivity extends AppCompatActivity {
         editTextPisacHardver.setText(author);
         editTextStraniceHardver.setText(pages);
 
+        String oldName = editTextImeKnjigeHardver.getText().toString();
+
         gumbUpdateHardver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                databaseHelperHardver = new HardverDatabaseHelper(getApplicationContext());
                 String name = editTextImeKnjigeHardver.getText().toString();
                 String author = editTextPisacHardver.getText().toString();
                 String pages = editTextStraniceHardver.getText().toString();
-                databaseHelper.updateBookHardver(name,author,pages);
+                databaseHelperHardver.updateItemHardver(name,author,pages,oldName);
             }
         });
 
@@ -58,8 +61,8 @@ public class ModifyHardverActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeHardver.getText().toString();
                 //databaseHelper.deleteRowHardver(nameKnjige);
-                databaseHelper = new HardverDatabaseHelper(getApplicationContext());
-                databaseHelper.deleteItemHardver(nameKnjige);
+                databaseHelperHardver = new HardverDatabaseHelper(getApplicationContext());
+                databaseHelperHardver.deleteItemHardver(nameKnjige);
 
             }
         });
