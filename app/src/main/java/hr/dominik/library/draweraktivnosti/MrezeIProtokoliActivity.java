@@ -8,7 +8,10 @@ import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedMrezeIProtokoliActivity;
 import hr.dominik.library.ModifyActivity.ModifyMrezeIProtokoliActivity;
 import hr.dominik.library.R;
+import hr.dominik.library.SearchActivity.SearchMrezeIProtokoliActivity;
+import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguMrezeIProtokoliActivity;
+import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -88,8 +91,14 @@ public class MrezeIProtokoliActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        startActivity(new Intent(MrezeIProtokoliActivity.this, UnesiteKnjiguMrezeIProtokoliActivity.class));
+        switch (item.getItemId()) {
+            case R.id.mreze_i_protokoli_menuAdd:
+                startActivity(new Intent(MrezeIProtokoliActivity.this, UnesiteKnjiguMrezeIProtokoliActivity.class));
+                break;
+            case R.id.mreze_i_protokoli_menuSearch:
+                startActivity(new Intent(MrezeIProtokoliActivity.this, SearchMrezeIProtokoliActivity.class));
+                break;
+        }
         return true;
     }
-
 }

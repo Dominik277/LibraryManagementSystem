@@ -2,7 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/programiranje_menuAdd"
+        android:id="@+id/operativni_sustavi_menuSearch"
+        android:title="programiranjeSearch"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        android:iconTint="@color/white">
+    </item>
+    <item
+        android:id="@+id/operativni_sustavi_menuAdd"
         app:showAsAction="always"
         android:title="programiranje"
         android:icon="@drawable/ic_baseline_add_box_24"

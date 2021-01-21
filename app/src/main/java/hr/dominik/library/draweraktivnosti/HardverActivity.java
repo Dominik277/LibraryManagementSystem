@@ -8,7 +8,10 @@ import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedHardverActivity;
 import hr.dominik.library.ModifyActivity.ModifyHardverActivity;
 import hr.dominik.library.R;
+import hr.dominik.library.SearchActivity.SearchHardverActivity;
+import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguHardverActivity;
+import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -88,8 +91,14 @@ public class HardverActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        startActivity(new Intent(HardverActivity.this, UnesiteKnjiguHardverActivity.class));
+        switch (item.getItemId()) {
+            case R.id.hardver_menuAdd:
+                startActivity(new Intent(HardverActivity.this, UnesiteKnjiguHardverActivity.class));
+                break;
+            case R.id.hardver_menuSearch:
+                startActivity(new Intent(HardverActivity.this, SearchHardverActivity.class));
+                break;
+        }
         return true;
     }
-
 }

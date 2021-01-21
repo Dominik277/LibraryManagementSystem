@@ -8,7 +8,10 @@ import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedOperativniSustaviActivity;
 import hr.dominik.library.ModifyActivity.ModifyOperativniSustaviActivity;
 import hr.dominik.library.R;
+import hr.dominik.library.SearchActivity.SearchOperativniSustaviActivity;
+import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguOperativniSustaviActivity;
+import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -88,8 +91,14 @@ public class OperativniSustaviActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        startActivity(new Intent(OperativniSustaviActivity.this, UnesiteKnjiguOperativniSustaviActivity.class));
+        switch (item.getItemId()) {
+            case R.id.operativni_sustavi_menuAdd:
+                startActivity(new Intent(OperativniSustaviActivity.this, UnesiteKnjiguOperativniSustaviActivity.class));
+                break;
+            case R.id.operativni_sustavi_menuSearch:
+                startActivity(new Intent(OperativniSustaviActivity.this, SearchOperativniSustaviActivity.class));
+                break;
+        }
         return true;
     }
-
 }
