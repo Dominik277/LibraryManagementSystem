@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
+import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
 
 public class ModifyProgramiranjeActivity extends AppCompatActivity {
 
@@ -53,6 +54,8 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
                     String author = editTextPisacProgramiranje.getText().toString();
                     String pages = editTextStraniceProgramiranje.getText().toString();
                     databaseHelper.updateItemProgramiranje(name,author,pages,oldName);
+                    Toast.makeText(ModifyProgramiranjeActivity.this,"Uspješno ste ažurirali artikl!",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(ModifyProgramiranjeActivity.this, ProgramiranjeActivity.class));
             }
         });
 

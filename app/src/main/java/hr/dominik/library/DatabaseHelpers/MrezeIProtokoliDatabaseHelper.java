@@ -85,18 +85,6 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
         return bookList;
     }
 
-    public int updateBookMrezeIProtokoli(String name, String author, String pages){
-        databaseMrezeIProtokoli = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(KEY_NAME,name);
-        contentValues.put(KEY_AUTHOR,author);
-        contentValues.put(KEY_PAGES,pages);
-        int count = databaseMrezeIProtokoli.update(TABLE_NAME
-                ,contentValues
-                ,KEY_NAME + "=" + name
-                ,new String[]{String.valueOf(name)});
-        return count;
-    }
 
     public void deleteItemMrezeIProtokoli(String name){
         SQLiteDatabase database = this.getWritableDatabase();

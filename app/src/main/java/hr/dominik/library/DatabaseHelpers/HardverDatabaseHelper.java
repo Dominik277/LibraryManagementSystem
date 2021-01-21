@@ -85,19 +85,6 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
         return bookList;
     }
 
-    public int updateBookHardver(String name, String author, String pages){
-        databaseHardver = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(KEY_NAME,name);
-        contentValues.put(KEY_AUTHOR,author);
-        contentValues.put(KEY_PAGES,pages);
-        int count = databaseHardver.update(TABLE_NAME
-                ,contentValues
-                ,KEY_NAME + "=" + name
-                ,new String[]{String.valueOf(name)});
-        return count;
-    }
-
     public void deleteItemHardver(String name){
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");

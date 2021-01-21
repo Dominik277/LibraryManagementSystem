@@ -5,12 +5,15 @@ import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.OperativniSustaviDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
+import hr.dominik.library.draweraktivnosti.OperativniSustaviActivity;
+import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ModifyOperativniSustaviActivity extends AppCompatActivity {
 
@@ -53,6 +56,8 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
                 String author = editTextPisacOperativniSustavi.getText().toString();
                 String pages = editTextStraniceOperativniSustavi.getText().toString();
                 databaseHelperOperativniSustavi.updateItemOperativniSustavi(name,author,pages,oldName);
+                Toast.makeText(ModifyOperativniSustaviActivity.this,"Uspješno ste ažurirali artikl!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ModifyOperativniSustaviActivity.this, OperativniSustaviActivity.class));
             }
         });
 

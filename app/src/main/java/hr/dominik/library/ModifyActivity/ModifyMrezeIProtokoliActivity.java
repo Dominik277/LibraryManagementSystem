@@ -5,6 +5,8 @@ import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
+import hr.dominik.library.draweraktivnosti.MrezeIProtokoliActivity;
+import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
 
@@ -54,6 +57,8 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
                 String author = editTextPisacMrezeIProtokoli.getText().toString();
                 String pages = editTextStraniceMrezeIProtokoli.getText().toString();
                 databaseHelperMrezeIProtokoli.updateItemMrezeIProtokoli(name,author,pages,oldName);
+                Toast.makeText(ModifyMrezeIProtokoliActivity.this,"Uspješno ste ažurirali artikl!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ModifyMrezeIProtokoliActivity.this, MrezeIProtokoliActivity.class));
             }
         });
 

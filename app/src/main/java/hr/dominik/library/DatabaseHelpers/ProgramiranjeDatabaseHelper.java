@@ -86,18 +86,6 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return bookList;
     }
 
-    public void updateBookProgramiranje(String name, String author, String pages){
-        databaseProgramiranje = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(KEY_NAME,name);
-        contentValues.put(KEY_AUTHOR,author);
-        contentValues.put(KEY_PAGES,pages);
-        int count = databaseProgramiranje.update(TABLE_NAME
-                ,contentValues
-                ,KEY_NAME + "=" + name
-                ,new String[]{String.valueOf(name)});
-    }
-
     public void deleteItemProgramiranje(String name){
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
