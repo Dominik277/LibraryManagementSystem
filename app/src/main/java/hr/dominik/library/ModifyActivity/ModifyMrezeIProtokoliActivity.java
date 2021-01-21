@@ -19,22 +19,20 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
     private EditText editTextStraniceMrezeIProtokoli;
     private Button gumbUpdateMrezeIProtokoli;
     private Button gumbDeleteMrezeIProtokoli;
-    private long _id;
 
     private MrezeIProtokoliDatabaseHelper databaseHelper;
-    SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_mreze_i_protokoli);
 
-        editTextImeKnjigeMrezeIProtokoli = findViewById(R.id.modify_nameProgramiranje);
-        editTextPisacMrezeIProtokoli = findViewById(R.id.modify_authorProgramiranje);
-        editTextStraniceMrezeIProtokoli = findViewById(R.id.modify_pagesProgramiranje);
+        editTextImeKnjigeMrezeIProtokoli = findViewById(R.id.modify_nameMrezeIProtokoli);
+        editTextPisacMrezeIProtokoli = findViewById(R.id.modify_authorMrezeIProtokoli);
+        editTextStraniceMrezeIProtokoli = findViewById(R.id.modify_pagesMrezeIProtokoli);
 
-        gumbUpdateMrezeIProtokoli = findViewById(R.id.gumbUpdateProgramiranje);
-        gumbDeleteMrezeIProtokoli = findViewById(R.id.gumbDeleteProgramiranje);
+        gumbUpdateMrezeIProtokoli = findViewById(R.id.gumbUpdateMrezeIProtokoli);
+        gumbDeleteMrezeIProtokoli = findViewById(R.id.gumbDeleteMrezeIProtokoli);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
@@ -64,24 +62,4 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
             }
         });
     }
-
-    /*
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.gumbUpdate:
-                String name = editTextImeKnjige.getText().toString();
-                String author = editTextPisac.getText().toString();
-                String pages = editTextStranice.getText().toString();
-                databaseHelper.updateBook(name,author,pages);
-
-            case R.id.gumbDelete:
-                String nameKnjige = editTextImeKnjige.getText().toString();
-                databaseHelper.deleteRow(nameKnjige);
-                break;
-        }
-    }
-
- */
-
 }

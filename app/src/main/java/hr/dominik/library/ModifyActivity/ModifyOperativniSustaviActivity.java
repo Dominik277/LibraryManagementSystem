@@ -18,7 +18,6 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
     private EditText editTextStraniceOperativniSustavi;
     private Button gumbUpdateOperativniSustavi;
     private Button gumbDeleteOperativniSustavi;
-    private long _id;
 
     private OperativniSustaviDatabaseHelper databaseHelper;
 
@@ -27,12 +26,12 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_operativni_sustavi);
 
-        editTextImeKnjigeOperativniSustavi = findViewById(R.id.modify_nameProgramiranje);
-        editTextPisacOperativniSustavi = findViewById(R.id.modify_authorProgramiranje);
-        editTextStraniceOperativniSustavi = findViewById(R.id.modify_pagesProgramiranje);
+        editTextImeKnjigeOperativniSustavi = findViewById(R.id.modify_nameOperativniSustavi);
+        editTextPisacOperativniSustavi = findViewById(R.id.modify_authorOperativniSustavi);
+        editTextStraniceOperativniSustavi = findViewById(R.id.modify_pagesOperativniSustavi);
 
-        gumbUpdateOperativniSustavi = findViewById(R.id.gumbUpdateProgramiranje);
-        gumbDeleteOperativniSustavi = findViewById(R.id.gumbDeleteProgramiranje);
+        gumbUpdateOperativniSustavi = findViewById(R.id.gumbUpdateOperativniSustavi);
+        gumbDeleteOperativniSustavi = findViewById(R.id.gumbDeleteOperativniSustavi);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
@@ -62,24 +61,4 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
             }
         });
     }
-
-    /*
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.gumbUpdate:
-                String name = editTextImeKnjige.getText().toString();
-                String author = editTextPisac.getText().toString();
-                String pages = editTextStranice.getText().toString();
-                databaseHelper.updateBook(name,author,pages);
-
-            case R.id.gumbDelete:
-                String nameKnjige = editTextImeKnjige.getText().toString();
-                databaseHelper.deleteRow(nameKnjige);
-                break;
-        }
-    }
-
- */
-
 }

@@ -18,7 +18,6 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
     private EditText editTextStraniceProgramiranje;
     private Button gumbUpdateProgramiranje;
     private Button gumbDeleteProgramiranje;
-    private long _id;
 
     private ProgramiranjeDatabaseHelper databaseHelper;
 
@@ -64,22 +63,4 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
             }
         });
     }
-/*
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.gumbUpdate:
-                String name = editTextImeKnjige.getText().toString();
-                String author = editTextPisac.getText().toString();
-                String pages = editTextStranice.getText().toString();
-                databaseHelper.updateBook(name,author,pages);
-
-            case R.id.gumbDelete:
-                String nameKnjige = editTextImeKnjige.getText().toString();
-                databaseHelper.deleteRow(nameKnjige);
-                break;
-        }
-    }
-
- */
 }
