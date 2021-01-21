@@ -58,13 +58,9 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeProgramiranje.getText().toString();
-                    //databaseHelper.deleteRowProgramiranje(nameKnjige);
-                try {
                     databaseHelper = new ProgramiranjeDatabaseHelper(getApplicationContext());
-                    databaseHelper.deleteItemProgramiranje("2");
-                }catch (NullPointerException e){
-                    Toast.makeText(ModifyProgramiranjeActivity.this,"NullPointer Exception",Toast.LENGTH_LONG).show();
-                }
+                    databaseHelper.deleteItemProgramiranje(nameKnjige);
+
             }
         });
     }

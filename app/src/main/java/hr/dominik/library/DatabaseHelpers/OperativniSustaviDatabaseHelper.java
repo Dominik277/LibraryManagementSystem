@@ -19,7 +19,7 @@ public class OperativniSustaviDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
 
-    public SQLiteDatabase databaseOperativniSustavi;
+    private SQLiteDatabase databaseOperativniSustavi;
 
     public OperativniSustaviDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -103,6 +103,11 @@ public class OperativniSustaviDatabaseHelper extends SQLiteOpenHelper {
         databaseOperativniSustavi.delete(TABLE_NAME
                 ,KEY_NAME + " = ?"
                 ,new String[]{String.valueOf(name)});
+    }
+
+    public void deleteItemOperativniSustavi(String name){
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
     }
 
 }

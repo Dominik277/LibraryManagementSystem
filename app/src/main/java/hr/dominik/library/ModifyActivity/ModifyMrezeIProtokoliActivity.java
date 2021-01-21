@@ -1,6 +1,7 @@
 package hr.dominik.library.ModifyActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
 import hr.dominik.library.R;
 
@@ -58,7 +59,8 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeMrezeIProtokoli.getText().toString();
-                database.delete(MrezeIProtokoliDatabaseHelper.TABLE_NAME,"name=?",new String[]{nameKnjige});
+                databaseHelper = new MrezeIProtokoliDatabaseHelper(getApplicationContext());
+                databaseHelper.deleteItemMrezeIProtokoli(nameKnjige);
             }
         });
     }

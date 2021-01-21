@@ -21,7 +21,6 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_PAGES = "pages";
 
     public SQLiteDatabase databaseProgramiranje;
-    private Context context;
 
     public ProgramiranjeDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -107,9 +106,9 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void deleteItemProgramiranje(String get_id){
+    public void deleteItemProgramiranje(String name){
         SQLiteDatabase database = this.getWritableDatabase();
-        database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE id = '" + get_id + "'");
+        database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
     }
 
 }

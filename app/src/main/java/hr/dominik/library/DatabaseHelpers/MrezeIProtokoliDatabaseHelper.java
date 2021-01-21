@@ -19,7 +19,7 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
 
-    public SQLiteDatabase databaseMrezeIProtokoli;
+    private SQLiteDatabase databaseMrezeIProtokoli;
 
     public MrezeIProtokoliDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -103,6 +103,11 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
         databaseMrezeIProtokoli.delete(TABLE_NAME
                 ,KEY_NAME + " = ?"
                 ,new String[]{String.valueOf(name)});
+    }
+
+    public void deleteItemMrezeIProtokoli(String name){
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
     }
 
 }

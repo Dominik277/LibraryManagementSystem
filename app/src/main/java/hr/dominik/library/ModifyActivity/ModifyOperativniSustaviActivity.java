@@ -1,6 +1,7 @@
 package hr.dominik.library.ModifyActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.OperativniSustaviDatabaseHelper;
 import hr.dominik.library.R;
 
@@ -56,7 +57,8 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeOperativniSustavi.getText().toString();
-                databaseHelper.deleteRowOperativniSustavi(nameKnjige);
+                databaseHelper = new OperativniSustaviDatabaseHelper(getApplicationContext());
+                databaseHelper.deleteItemOperativniSustavi(nameKnjige);
             }
         });
     }

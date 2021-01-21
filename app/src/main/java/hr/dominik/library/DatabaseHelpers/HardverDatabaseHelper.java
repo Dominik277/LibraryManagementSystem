@@ -19,7 +19,7 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
 
-    SQLiteDatabase databaseHardver;
+    private SQLiteDatabase databaseHardver;
 
     public HardverDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
