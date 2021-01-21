@@ -11,5 +11,7 @@ public class SearchOperativniSustaviActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_operativni_sustavi);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Ovdje možete pretražiti knjižnicu");
     }
 }
