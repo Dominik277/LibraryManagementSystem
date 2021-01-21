@@ -9,8 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import androidx.annotation.Nullable;
-
 public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "mreze_i_protokoli_db";
@@ -21,7 +19,7 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
 
-    SQLiteDatabase database;
+    public SQLiteDatabase databaseMrezeIProtokoli;
 
     public MrezeIProtokoliDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -45,13 +43,13 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void insertBookMrezeIProtokoli(String name, String author, String pages){
-        database = this.getWritableDatabase();
+        databaseMrezeIProtokoli = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        database.insert(TABLE_NAME,null,contentValues);
-        database.close();
+        databaseMrezeIProtokoli.insert(TABLE_NAME,null,contentValues);
+        databaseMrezeIProtokoli.close();
     }
 
     public ArrayList<HashMap<String,String>> getBooksMrezeIProtokoli(){
@@ -88,12 +86,12 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updateBookMrezeIProtokoli(String name, String author, String pages){
-        database = this.getWritableDatabase();
+        databaseMrezeIProtokoli = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        int count = database.update(TABLE_NAME
+        int count = databaseMrezeIProtokoli.update(TABLE_NAME
                 ,contentValues
                 ,KEY_NAME + "=" + name
                 ,new String[]{String.valueOf(name)});
@@ -101,8 +99,8 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void deleteRowMrezeIProtokoli(String name){
-        database = this.getWritableDatabase();
-        database.delete(TABLE_NAME
+        databaseMrezeIProtokoli = this.getWritableDatabase();
+        databaseMrezeIProtokoli.delete(TABLE_NAME
                 ,KEY_NAME + " = ?"
                 ,new String[]{String.valueOf(name)});
     }

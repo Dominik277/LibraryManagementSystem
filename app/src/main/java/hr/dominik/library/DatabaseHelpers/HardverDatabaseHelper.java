@@ -9,8 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import androidx.annotation.Nullable;
-
 public class HardverDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "hardver_db";
@@ -21,7 +19,7 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
 
-    SQLiteDatabase database;
+    SQLiteDatabase databaseHardver;
 
     public HardverDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -45,13 +43,13 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void insertBookHardver(String name, String author, String pages){
-        database = this.getWritableDatabase();
+        databaseHardver = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        database.insert(TABLE_NAME,null,contentValues);
-        database.close();
+        databaseHardver.insert(TABLE_NAME,null,contentValues);
+        databaseHardver.close();
     }
 
     public ArrayList<HashMap<String,String>> getBooksHardver(){
@@ -88,12 +86,12 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updateBookHardver(String name, String author, String pages){
-        database = this.getWritableDatabase();
+        databaseHardver = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        int count = database.update(TABLE_NAME
+        int count = databaseHardver.update(TABLE_NAME
                 ,contentValues
                 ,KEY_NAME + "=" + name
                 ,new String[]{String.valueOf(name)});
@@ -101,10 +99,15 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void deleteRowHardver(String name){
-        database = this.getWritableDatabase();
-        database.delete(TABLE_NAME
+        databaseHardver = this.getWritableDatabase();
+        databaseHardver.delete(TABLE_NAME
                 ,KEY_NAME + " = ?"
                 ,new String[]{String.valueOf(name)});
+    }
+
+    public void deleteItemHardver(String name){
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
     }
 
 }

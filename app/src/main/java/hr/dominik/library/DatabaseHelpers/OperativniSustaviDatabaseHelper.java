@@ -19,7 +19,7 @@ public class OperativniSustaviDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
 
-    SQLiteDatabase database;
+    public SQLiteDatabase databaseOperativniSustavi;
 
     public OperativniSustaviDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -43,13 +43,13 @@ public class OperativniSustaviDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void insertBookOperativniSustavi(String name, String author, String pages){
-        database = this.getWritableDatabase();
+        databaseOperativniSustavi = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        database.insert(TABLE_NAME,null,contentValues);
-        database.close();
+        databaseOperativniSustavi.insert(TABLE_NAME,null,contentValues);
+        databaseOperativniSustavi.close();
     }
 
     public ArrayList<HashMap<String,String>> getBooksOperativniSustavi(){
@@ -86,12 +86,12 @@ public class OperativniSustaviDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int updateBookOperativniSustavi(String name, String author, String pages){
-        database = this.getWritableDatabase();
+        databaseOperativniSustavi = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        int count = database.update(TABLE_NAME
+        int count = databaseOperativniSustavi.update(TABLE_NAME
                 ,contentValues
                 ,KEY_NAME + "=" + name
                 ,new String[]{String.valueOf(name)});
@@ -99,8 +99,8 @@ public class OperativniSustaviDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void deleteRowOperativniSustavi(String name){
-        database = this.getWritableDatabase();
-        database.delete(TABLE_NAME
+        databaseOperativniSustavi = this.getWritableDatabase();
+        databaseOperativniSustavi.delete(TABLE_NAME
                 ,KEY_NAME + " = ?"
                 ,new String[]{String.valueOf(name)});
     }

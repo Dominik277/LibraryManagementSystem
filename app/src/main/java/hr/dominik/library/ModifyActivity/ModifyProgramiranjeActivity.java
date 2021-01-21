@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
@@ -56,8 +57,14 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
         gumbDeleteProgramiranje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    String nameKnjige = editTextImeKnjigeProgramiranje.getText().toString();
-                    databaseHelper.deleteRowProgramiranje(nameKnjige);
+                String nameKnjige = editTextImeKnjigeProgramiranje.getText().toString();
+                    //databaseHelper.deleteRowProgramiranje(nameKnjige);
+                try {
+                    databaseHelper = new ProgramiranjeDatabaseHelper(getApplicationContext());
+                    databaseHelper.deleteItemProgramiranje("2");
+                }catch (NullPointerException e){
+                    Toast.makeText(ModifyProgramiranjeActivity.this,"NullPointer Exception",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

@@ -5,6 +5,7 @@ import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
 import hr.dominik.library.R;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
     private long _id;
 
     private MrezeIProtokoliDatabaseHelper databaseHelper;
+    SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeMrezeIProtokoli.getText().toString();
-                databaseHelper.deleteRowMrezeIProtokoli(nameKnjige);
+                database.delete(MrezeIProtokoliDatabaseHelper.TABLE_NAME,"name=?",new String[]{nameKnjige});
             }
         });
     }

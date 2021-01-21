@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +20,8 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
 
-    SQLiteDatabase database;
+    public SQLiteDatabase databaseProgramiranje;
+    private Context context;
 
     public ProgramiranjeDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -45,13 +45,13 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void insertBookProgramiranje(String name, String author, String pages){
-        database = this.getWritableDatabase();
+        databaseProgramiranje = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        database.insert(TABLE_NAME,null,contentValues);
-        database.close();
+        databaseProgramiranje.insert(TABLE_NAME,null,contentValues);
+        databaseProgramiranje.close();
     }
 
     public ArrayList<HashMap<String,String>> getBooksProgramiranje(){
@@ -87,24 +87,29 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return bookList;
     }
 
-    public int updateBookProgramiranje(String name, String author, String pages){
-        database = this.getWritableDatabase();
+    public void updateBookProgramiranje(String name, String author, String pages){
+        databaseProgramiranje = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME,name);
         contentValues.put(KEY_AUTHOR,author);
         contentValues.put(KEY_PAGES,pages);
-        int count = database.update(TABLE_NAME
+        int count = databaseProgramiranje.update(TABLE_NAME
                 ,contentValues
                 ,KEY_NAME + "=" + name
                 ,new String[]{String.valueOf(name)});
-        return count;
     }
 
     public void deleteRowProgramiranje(String name){
-        database = this.getWritableDatabase();
-        database.delete(TABLE_NAME
+        databaseProgramiranje = this.getWritableDatabase();
+        databaseProgramiranje.delete(TABLE_NAME
                 ,KEY_NAME + " = ?"
                 ,new String[]{String.valueOf(name)});
+    }
+
+
+    public void deleteItemProgramiranje(String get_id){
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE id = '" + get_id + "'");
     }
 
 }

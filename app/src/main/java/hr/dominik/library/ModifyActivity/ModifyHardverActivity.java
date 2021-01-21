@@ -6,6 +6,7 @@ import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,7 +58,10 @@ public class ModifyHardverActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameKnjige = editTextImeKnjigeHardver.getText().toString();
-                databaseHelper.deleteRowHardver(nameKnjige);
+                //databaseHelper.deleteRowHardver(nameKnjige);
+                databaseHelper = new HardverDatabaseHelper(getApplicationContext());
+                databaseHelper.deleteItemHardver(nameKnjige);
+
             }
         });
     }
