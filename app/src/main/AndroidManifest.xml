@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
+        <activity android:name=".SearchActivity.SearchHardverActivity"></activity>
+        <activity android:name=".SearchActivity.SearchOperativniSustaviActivity" />
+        <activity android:name=".SearchActivity.SearchMrezeIProtokoliActivity" />
         <activity
             android:name=".SearchActivity.SearchProgramiranjeActivity"
-            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity" />
         <activity
             android:name=".UnesiKnjiguActivity.UnesiteKnjiguOperativniSustaviActivity"
             android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity" />
