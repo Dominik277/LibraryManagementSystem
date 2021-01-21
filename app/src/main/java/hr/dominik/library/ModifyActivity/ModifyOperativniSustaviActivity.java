@@ -29,6 +29,7 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_operativni_sustavi);
+        setTitle("Ovdje možete ažurirati zapise");
 
         editTextImeKnjigeOperativniSustavi = findViewById(R.id.modify_nameOperativniSustavi);
         editTextPisacOperativniSustavi = findViewById(R.id.modify_authorOperativniSustavi);

@@ -9,15 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
-        <activity android:name=".UnesiKnjiguActivity.UnesiteKnjiguOperativniSustaviActivity"></activity>
-        <activity android:name=".UnesiKnjiguActivity.UnesiteKnjiguMrezeIProtokoliActivity" />
-        <activity android:name=".UnesiKnjiguActivity.UnesiteKnjiguHardverActivity" />
-        <activity android:name=".ModifyActivity.ModifyOperativniSustaviActivity" />
-        <activity android:name=".ModifyActivity.ModifyMrezeIProtokoliActivity" />
-        <activity android:name=".ModifyActivity.ModifyHardverActivity" />
-        <activity android:name=".ItemClickActivity.ItemClickedOperativniSustaviActivity" />
-        <activity android:name=".ItemClickActivity.ItemClickedMrezeIProtokoliActivity" />
-        <activity android:name=".ItemClickActivity.ItemClickedHardverActivity" />
+        <activity
+            android:name=".UnesiKnjiguActivity.UnesiteKnjiguOperativniSustaviActivity"
+            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity"/>
+        <activity
+            android:name=".UnesiKnjiguActivity.UnesiteKnjiguMrezeIProtokoliActivity"
+            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity"/>
+        <activity
+            android:name=".UnesiKnjiguActivity.UnesiteKnjiguHardverActivity"
+            android:parentActivityName=".draweraktivnosti.HardverActivity"/>
+        <activity
+            android:name=".ModifyActivity.ModifyOperativniSustaviActivity"
+            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity"/>
+        <activity
+            android:name=".ModifyActivity.ModifyMrezeIProtokoliActivity"
+            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity"/>
+        <activity
+            android:name=".ModifyActivity.ModifyHardverActivity"
+            android:parentActivityName=".draweraktivnosti.HardverActivity"/>
+        <activity
+            android:name=".ItemClickActivity.ItemClickedOperativniSustaviActivity"
+            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity"/>
+        <activity
+            android:name=".ItemClickActivity.ItemClickedMrezeIProtokoliActivity"
+            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity"/>
+        <activity
+            android:name=".ItemClickActivity.ItemClickedHardverActivity"
+            android:parentActivityName=".draweraktivnosti.HardverActivity"/>
         <activity
             android:name=".draweraktivnosti.FABActivity"
             android:label="Ovdje možete napisati upit!"

@@ -26,6 +26,7 @@ public class UnesiteKnjiguOperativniSustaviActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unesite_knjigu_operativni_sustavi);
+        setTitle("Ovdje možete unijeti novu knjigu");
 
         MrezeIProtokoliDatabaseHelper databaseHelper = new MrezeIProtokoliDatabaseHelper(this);
 

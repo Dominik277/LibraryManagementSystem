@@ -26,6 +26,7 @@ public class UnesiteKnjiguMrezeIProtokoliActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unesite_knjigu_mreze_i_protokoli);
+        setTitle("Ovdje možete unijeti novu knjigu");
 
         MrezeIProtokoliDatabaseHelper databaseHelper = new MrezeIProtokoliDatabaseHelper(this);
 

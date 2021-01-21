@@ -25,6 +25,7 @@ public class UnesiteKnjiguProgramiranjeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unesite_knjigu_programiranje);
+        setTitle("Ovdje možete unijeti novu knjigu");
 
         ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
 

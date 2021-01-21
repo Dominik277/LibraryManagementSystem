@@ -31,6 +31,7 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_mreze_i_protokoli);
+        setTitle("Ovdje možete ažurirati zapise");
 
         editTextImeKnjigeMrezeIProtokoli = findViewById(R.id.modify_nameMrezeIProtokoli);
         editTextPisacMrezeIProtokoli = findViewById(R.id.modify_authorMrezeIProtokoli);

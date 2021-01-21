@@ -26,6 +26,7 @@ public class UnesiteKnjiguHardverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unesite_knjigu_hardver);
+        setTitle("Ovdje možete unijeti novu knjigu");
 
         HardverDatabaseHelper databaseHelper = new HardverDatabaseHelper(this);
 

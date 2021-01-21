@@ -30,6 +30,7 @@ public class ModifyHardverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_hardver);
+        setTitle("Ovdje možete ažurirati zapise");
 
         editTextImeKnjigeHardver = findViewById(R.id.modify_nameHardver);
         editTextPisacHardver = findViewById(R.id.modify_authorHardver);
