@@ -6,6 +6,7 @@ import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ModifyActivity.ModifyProgramiranjeActivity;
 import hr.dominik.library.R;
+import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
 
 import android.content.Intent;
@@ -86,7 +87,14 @@ public class ProgramiranjeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        startActivity(new Intent(ProgramiranjeActivity.this, UnesiteKnjiguProgramiranjeActivity.class));
+        switch (item.getItemId()){
+            case R.id.programiranje_menuAdd:
+                startActivity(new Intent(ProgramiranjeActivity.this, UnesiteKnjiguProgramiranjeActivity.class));
+                break;
+            case R.id.programiranje_menuSearch:
+                startActivity(new Intent(ProgramiranjeActivity.this, SearchProgramiranjeActivity.class));
+                break;
+        }
         return true;
     }
 }

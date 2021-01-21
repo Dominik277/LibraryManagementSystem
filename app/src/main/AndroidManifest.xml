@@ -10,32 +10,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
         <activity
+            android:name=".SearchActivity.SearchProgramiranjeActivity"
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
+        <activity
             android:name=".UnesiKnjiguActivity.UnesiteKnjiguOperativniSustaviActivity"
-            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity"/>
+            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity" />
         <activity
             android:name=".UnesiKnjiguActivity.UnesiteKnjiguMrezeIProtokoliActivity"
-            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity"/>
+            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity" />
         <activity
             android:name=".UnesiKnjiguActivity.UnesiteKnjiguHardverActivity"
-            android:parentActivityName=".draweraktivnosti.HardverActivity"/>
+            android:parentActivityName=".draweraktivnosti.HardverActivity" />
         <activity
             android:name=".ModifyActivity.ModifyOperativniSustaviActivity"
-            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity"/>
+            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity" />
         <activity
             android:name=".ModifyActivity.ModifyMrezeIProtokoliActivity"
-            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity"/>
+            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity" />
         <activity
             android:name=".ModifyActivity.ModifyHardverActivity"
-            android:parentActivityName=".draweraktivnosti.HardverActivity"/>
+            android:parentActivityName=".draweraktivnosti.HardverActivity" />
         <activity
             android:name=".ItemClickActivity.ItemClickedOperativniSustaviActivity"
-            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity"/>
+            android:parentActivityName=".draweraktivnosti.OperativniSustaviActivity" />
         <activity
             android:name=".ItemClickActivity.ItemClickedMrezeIProtokoliActivity"
-            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity"/>
+            android:parentActivityName=".draweraktivnosti.MrezeIProtokoliActivity" />
         <activity
             android:name=".ItemClickActivity.ItemClickedHardverActivity"
-            android:parentActivityName=".draweraktivnosti.HardverActivity"/>
+            android:parentActivityName=".draweraktivnosti.HardverActivity" />
         <activity
             android:name=".draweraktivnosti.FABActivity"
             android:label="Ovdje možete napisati upit!"
@@ -59,15 +62,15 @@
         <activity
             android:name=".ItemClickActivity.ItemClickProgramiranjeActivity"
             android:label="Programiranje"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity" />
         <activity
             android:name=".ModifyActivity.ModifyProgramiranjeActivity"
             android:label="Programiranje"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity" />
         <activity
             android:name=".UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity"
             android:label="Programiranje"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
