@@ -6,6 +6,7 @@ import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
 import hr.dominik.library.draweraktivnosti.MrezeIProtokoliActivity;
+import hr.dominik.library.draweraktivnosti.OperativniSustaviActivity;
 import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
 
 import android.content.Intent;
@@ -68,6 +69,8 @@ public class ModifyMrezeIProtokoliActivity extends AppCompatActivity {
                 String nameKnjige = editTextImeKnjigeMrezeIProtokoli.getText().toString();
                 databaseHelperMrezeIProtokoli = new MrezeIProtokoliDatabaseHelper(getApplicationContext());
                 databaseHelperMrezeIProtokoli.deleteItemMrezeIProtokoli(nameKnjige);
+                Toast.makeText(ModifyMrezeIProtokoliActivity.this,"Uspješno ste obrisali artikl!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ModifyMrezeIProtokoliActivity.this, MrezeIProtokoliActivity.class));
             }
         });
     }

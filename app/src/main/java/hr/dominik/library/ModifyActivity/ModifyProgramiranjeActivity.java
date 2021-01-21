@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
+import hr.dominik.library.draweraktivnosti.OperativniSustaviActivity;
 import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
 
 public class ModifyProgramiranjeActivity extends AppCompatActivity {
@@ -65,6 +66,8 @@ public class ModifyProgramiranjeActivity extends AppCompatActivity {
                 String nameKnjige = editTextImeKnjigeProgramiranje.getText().toString();
                     databaseHelper = new ProgramiranjeDatabaseHelper(getApplicationContext());
                     databaseHelper.deleteItemProgramiranje(nameKnjige);
+                    Toast.makeText(ModifyProgramiranjeActivity.this,"Uspješno ste obrisali artikl!",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(ModifyProgramiranjeActivity.this, ProgramiranjeActivity.class));
 
             }
         });

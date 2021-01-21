@@ -67,6 +67,8 @@ public class ModifyOperativniSustaviActivity extends AppCompatActivity {
                 String nameKnjige = editTextImeKnjigeOperativniSustavi.getText().toString();
                 databaseHelperOperativniSustavi = new OperativniSustaviDatabaseHelper(getApplicationContext());
                 databaseHelperOperativniSustavi.deleteItemOperativniSustavi(nameKnjige);
+                Toast.makeText(ModifyOperativniSustaviActivity.this,"Uspješno ste obrisali artikl!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ModifyOperativniSustaviActivity.this, OperativniSustaviActivity.class));
             }
         });
     }

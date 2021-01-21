@@ -5,6 +5,7 @@ import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
 import hr.dominik.library.draweraktivnosti.HardverActivity;
+import hr.dominik.library.draweraktivnosti.OperativniSustaviActivity;
 import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
 
 import android.content.Intent;
@@ -68,6 +69,8 @@ public class ModifyHardverActivity extends AppCompatActivity {
                 //databaseHelper.deleteRowHardver(nameKnjige);
                 databaseHelperHardver = new HardverDatabaseHelper(getApplicationContext());
                 databaseHelperHardver.deleteItemHardver(nameKnjige);
+                Toast.makeText(ModifyHardverActivity.this,"Uspješno ste obrisali artikl!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ModifyHardverActivity.this, HardverActivity.class));
 
             }
         });
