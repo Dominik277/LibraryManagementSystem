@@ -103,4 +103,14 @@ public class MrezeIProtokoliDatabaseHelper extends SQLiteOpenHelper {
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = '" + name + "'");
     }
 
+    public int updateItemMrezeIProtokoli(String name,String author,String pages,String oldName){
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(KEY_NAME,name);
+        contentValues.put(KEY_AUTHOR,author);
+        contentValues.put(KEY_PAGES,pages);
+        int i = database.update(TABLE_NAME,contentValues,"name = ?",new String[]{oldName});
+        return i;
+    }
+
 }
