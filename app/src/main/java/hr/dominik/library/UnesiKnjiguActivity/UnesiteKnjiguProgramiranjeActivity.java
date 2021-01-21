@@ -1,5 +1,6 @@
 package hr.dominik.library.UnesiKnjiguActivity;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
+import hr.dominik.library.draweraktivnosti.ProgramiranjeActivity;
 
 public class UnesiteKnjiguProgramiranjeActivity extends AppCompatActivity {
 
@@ -39,6 +41,7 @@ public class UnesiteKnjiguProgramiranjeActivity extends AppCompatActivity {
                 String stranice = editTextUnesiStranice.getText().toString();
                 ProgramiranjeDatabaseHelper databaseHelper =new ProgramiranjeDatabaseHelper(UnesiteKnjiguProgramiranjeActivity.this);
                 databaseHelper.insertBookProgramiranje(knjiga,autor,stranice);
+                startActivity(new Intent(UnesiteKnjiguProgramiranjeActivity.this, ProgramiranjeActivity.class));
                 Toast.makeText(getApplicationContext(),"Knjiga unešena u bazu podataka"
                         ,Toast.LENGTH_LONG).show();
             }

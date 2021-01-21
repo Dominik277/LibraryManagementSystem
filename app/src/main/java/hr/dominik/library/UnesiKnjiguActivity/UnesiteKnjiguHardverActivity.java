@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
+import hr.dominik.library.draweraktivnosti.HardverActivity;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +42,7 @@ public class UnesiteKnjiguHardverActivity extends AppCompatActivity {
                 String stranice = editTextUnesiStraniceHardver.getText().toString();
                 HardverDatabaseHelper databaseHelper =new HardverDatabaseHelper(UnesiteKnjiguHardverActivity.this);
                 databaseHelper.insertBookHardver(knjiga,autor,stranice);
+                startActivity(new Intent(UnesiteKnjiguHardverActivity.this, HardverActivity.class));
                 Toast.makeText(getApplicationContext(),"Knjiga unešena u bazu podataka"
                         ,Toast.LENGTH_LONG).show();
             }

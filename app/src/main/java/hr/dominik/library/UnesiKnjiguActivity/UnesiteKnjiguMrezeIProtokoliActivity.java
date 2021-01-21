@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.MrezeIProtokoliDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.R;
+import hr.dominik.library.draweraktivnosti.MrezeIProtokoliActivity;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +42,7 @@ public class UnesiteKnjiguMrezeIProtokoliActivity extends AppCompatActivity {
                 String stranice = editTextUnesiStraniceMrezeIProtokoli.getText().toString();
                 MrezeIProtokoliDatabaseHelper databaseHelper =new MrezeIProtokoliDatabaseHelper(UnesiteKnjiguMrezeIProtokoliActivity.this);
                 databaseHelper.insertBookMrezeIProtokoli(knjiga,autor,stranice);
+                startActivity(new Intent(UnesiteKnjiguMrezeIProtokoliActivity.this, MrezeIProtokoliActivity.class));
                 Toast.makeText(getApplicationContext(),"Knjiga unešena u bazu podataka"
                         ,Toast.LENGTH_LONG).show();
             }
