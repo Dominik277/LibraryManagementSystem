@@ -101,4 +101,8 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         return i;
     }
 
+    public void searchQuery(){
+
+    }
+
 }
