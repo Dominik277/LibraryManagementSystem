@@ -28,8 +28,6 @@ public class ModifyHardverActivity extends AppCompatActivity {
 
     private HardverDatabaseHelper databaseHelperHardver;
 
-    public static final String EXTRA_HARDVERID = "hardverId";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
