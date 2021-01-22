@@ -11,11 +11,11 @@
         android:orderInCategory="2">
         <menu>
             <item
-                android:id="@+id/posudeneKnjige"
+                android:id="@+id/posudeneKnjigeProgramiranje"
                 android:title="Posuđene knjige!"
                 app:showAsAction="never"/>
             <item
-                android:id="@+id/wishListKnjige"
+                android:id="@+id/wishListKnjigeProgramiranje"
                 android:title="Wish List"
                 app:showAsAction="never"/>
         </menu>

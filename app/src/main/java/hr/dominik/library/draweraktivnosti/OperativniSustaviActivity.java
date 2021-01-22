@@ -7,6 +7,8 @@ import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedOperativniSustaviActivity;
 import hr.dominik.library.ModifyActivity.ModifyOperativniSustaviActivity;
+import hr.dominik.library.OperativniSustaviMenuActivity.PosudeneKnjigeOperativniSustaviActivity;
+import hr.dominik.library.OperativniSustaviMenuActivity.WishListOperativniSustaviActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.SearchActivity.SearchOperativniSustaviActivity;
 import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
@@ -97,6 +99,12 @@ public class OperativniSustaviActivity extends AppCompatActivity {
                 break;
             case R.id.operativni_sustavi_menuSearch:
                 startActivity(new Intent(OperativniSustaviActivity.this, SearchOperativniSustaviActivity.class));
+                break;
+            case R.id.posudeneKnjigeOperativniSustavi:
+                startActivity(new Intent(OperativniSustaviActivity.this, PosudeneKnjigeOperativniSustaviActivity.class));
+                break;
+            case R.id.wishListKnjigeOperativniSustavi:
+                startActivity(new Intent(OperativniSustaviActivity.this, WishListOperativniSustaviActivity.class));
                 break;
         }
         return true;

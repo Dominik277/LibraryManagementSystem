@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/programiranje_menuMore"
+        android:id="@+id/hardver_menuMore"
         android:title="programiranjeMore"
         android:icon="@drawable/ic_baseline_login_24"
         app:showAsAction="always"
@@ -10,11 +10,11 @@
         android:orderInCategory="2">
         <menu>
             <item
-                android:id="@+id/posudeneKnjige"
+                android:id="@+id/posudeneKnjigeHardver"
                 android:title="Posuđene knjige!"
                 app:showAsAction="never"/>
             <item
-                android:id="@+id/wishListKnjige"
+                android:id="@+id/wishListKnjigeHardver"
                 android:title="Wish List"
                 app:showAsAction="never"/>
         </menu>

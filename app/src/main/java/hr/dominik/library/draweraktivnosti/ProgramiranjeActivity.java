@@ -98,10 +98,10 @@ public class ProgramiranjeActivity extends AppCompatActivity {
             case R.id.programiranje_menuSearch:
                 startActivity(new Intent(ProgramiranjeActivity.this, SearchProgramiranjeActivity.class));
                 break;
-            case R.id.posudeneKnjige:
+            case R.id.posudeneKnjigeProgramiranje:
                 startActivity(new Intent(ProgramiranjeActivity.this, PosudeneKnjigeProgramiranjeActivity.class));
                 break;
-            case R.id.wishListKnjige:
+            case R.id.wishListKnjigeProgramiranje:
                 startActivity(new Intent(ProgramiranjeActivity.this, WishListProgramiranjeActivity.class));
         }
         return true;

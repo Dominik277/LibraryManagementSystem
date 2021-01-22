@@ -7,6 +7,8 @@ import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedMrezeIProtokoliActivity;
 import hr.dominik.library.ModifyActivity.ModifyMrezeIProtokoliActivity;
+import hr.dominik.library.MrezeIProtokoliMenuActivity.PosudeneKnjigeMrezeIProtokoliActivity;
+import hr.dominik.library.MrezeIProtokoliMenuActivity.WishListMrezeIProtokoliActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.SearchActivity.SearchMrezeIProtokoliActivity;
 import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
@@ -97,6 +99,12 @@ public class MrezeIProtokoliActivity extends AppCompatActivity {
                 break;
             case R.id.mreze_i_protokoli_menuSearch:
                 startActivity(new Intent(MrezeIProtokoliActivity.this, SearchMrezeIProtokoliActivity.class));
+                break;
+            case R.id.posudeneKnjigeMrezeIProtokoli:
+                startActivity(new Intent(MrezeIProtokoliActivity.this, PosudeneKnjigeMrezeIProtokoliActivity.class));
+                break;
+            case R.id.wishListKnjigeMrezeIProtokoli:
+                startActivity(new Intent(MrezeIProtokoliActivity.this, WishListMrezeIProtokoliActivity.class));
                 break;
         }
         return true;

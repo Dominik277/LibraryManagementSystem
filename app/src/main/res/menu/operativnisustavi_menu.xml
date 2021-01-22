@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/programiranje_menuMore"
-        android:title="programiranjeMore"
+        android:id="@+id/operativni_sustavi_menuMore"
+        android:title="operativnisustaviMore"
         android:icon="@drawable/ic_baseline_login_24"
         app:showAsAction="always"
         android:iconTint="@color/white"
         android:orderInCategory="2">
         <menu>
             <item
-                android:id="@+id/posudeneKnjige"
+                android:id="@+id/posudeneKnjigeOperativniSustavi"
                 android:title="Posuđene knjige!"
                 app:showAsAction="never"/>
             <item
-                android:id="@+id/wishListKnjige"
+                android:id="@+id/wishListKnjigeOperativniSustavi"
                 android:title="Wish List"
                 app:showAsAction="never"/>
         </menu>

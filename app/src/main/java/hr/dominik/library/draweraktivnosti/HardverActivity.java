@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import hr.dominik.library.DatabaseHelpers.HardverDatabaseHelper;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
+import hr.dominik.library.HardverMenuActivity.PosudeneKnjigeHardverActivity;
+import hr.dominik.library.HardverMenuActivity.WishListHardverActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ItemClickActivity.ItemClickedHardverActivity;
 import hr.dominik.library.ModifyActivity.ModifyHardverActivity;
@@ -97,6 +99,12 @@ public class HardverActivity extends AppCompatActivity {
                 break;
             case R.id.hardver_menuSearch:
                 startActivity(new Intent(HardverActivity.this, SearchHardverActivity.class));
+                break;
+            case R.id.posudeneKnjigeHardver:
+                startActivity(new Intent(HardverActivity.this, PosudeneKnjigeHardverActivity.class));
+                break;
+            case R.id.wishListKnjigeHardver:
+                startActivity(new Intent(HardverActivity.this, WishListHardverActivity.class));
                 break;
         }
         return true;
