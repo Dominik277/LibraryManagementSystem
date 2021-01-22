@@ -100,9 +100,4 @@ public class ProgramiranjeDatabaseHelper extends SQLiteOpenHelper {
         int i = database.update(TABLE_NAME,contentValues,"name = ?",new String[]{oldName});
         return i;
     }
-
-    public void searchQuery(){
-
-    }
-
 }

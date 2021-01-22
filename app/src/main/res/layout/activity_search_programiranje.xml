@@ -22,11 +22,13 @@
         android:layout_marginTop="40dp"
         android:hint="Koju knjigu tražite?"/>
     <ListView
+        android:id="@+id/listViewSearchProgramiranje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginTop="30dp"/>
     <Button
+        android:id="@+id/gumbPronadiKnjigu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
