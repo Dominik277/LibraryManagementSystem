@@ -12,10 +12,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
-        android:text="Ovo su sve knjige o Mrežama i Protokolima!"
+        android:text="Ove knjige su dostupne!"
         android:textColor="#000"
-        android:textSize="25dp"/>
+        android:textSize="30dp"/>
 
     <ListView
         android:id="@+id/listViewMrezeIProtokoli"

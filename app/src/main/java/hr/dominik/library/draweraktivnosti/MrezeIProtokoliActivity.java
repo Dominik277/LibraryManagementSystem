@@ -36,7 +36,7 @@ public class MrezeIProtokoliActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mreze_i_protokoli);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Mreze i Protokoli");
+        setTitle("Mreže i Protokoli");
 
         MrezeIProtokoliDatabaseHelper databaseHelper = new MrezeIProtokoliDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksMrezeIProtokoli();

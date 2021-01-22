@@ -34,7 +34,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programiranje);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Ove knjige su dostupne!");
+        setTitle("Programiranje");
 
         ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksProgramiranje();
