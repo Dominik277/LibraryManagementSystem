@@ -11,5 +11,7 @@ public class PosudeneKnjigeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posudene_knjige);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Ove knjige su posuđene!");
     }
 }

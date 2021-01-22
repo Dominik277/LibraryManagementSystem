@@ -6,6 +6,8 @@ import androidx.core.view.MenuItemCompat;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ModifyActivity.ModifyProgramiranjeActivity;
+import hr.dominik.library.ProgramiranjeMenuActivity.PosudeneKnjigeActivity;
+import hr.dominik.library.ProgramiranjeMenuActivity.WishListActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
@@ -23,6 +25,8 @@ import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -35,7 +39,7 @@ public class ProgramiranjeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programiranje);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Programiranje");
+        setTitle("Ove knjige su dostupne!");
 
         ProgramiranjeDatabaseHelper databaseHelper = new ProgramiranjeDatabaseHelper(this);
         ArrayList<HashMap<String,String>> booksList = databaseHelper.getBooksProgramiranje();
@@ -99,6 +103,11 @@ public class ProgramiranjeActivity extends AppCompatActivity {
             case R.id.programiranje_menuSearch:
                 startActivity(new Intent(ProgramiranjeActivity.this, SearchProgramiranjeActivity.class));
                 break;
+            case R.id.posudeneKnjige:
+                startActivity(new Intent(ProgramiranjeActivity.this,PosudeneKnjigeActivity.class));
+                break;
+            case R.id.wishListKnjige:
+                startActivity(new Intent(ProgramiranjeActivity.this,WishListActivity.class));
         }
         return true;
     }

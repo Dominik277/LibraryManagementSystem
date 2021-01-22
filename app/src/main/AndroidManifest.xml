@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
-        <activity android:name=".ProgramiranjeMenuActivity.WishListActivity"></activity>
-        <activity android:name=".ProgramiranjeMenuActivity.PosudeneKnjigeActivity" />
+        <activity
+            android:name=".ProgramiranjeMenuActivity.WishListActivity"
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
+        <activity
+            android:name=".ProgramiranjeMenuActivity.PosudeneKnjigeActivity"
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
         <activity
             android:name=".SearchActivity.SearchHardverActivity"
             android:parentActivityName=".draweraktivnosti.HardverActivity" />
