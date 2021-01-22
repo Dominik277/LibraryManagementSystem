@@ -11,5 +11,7 @@ public class PosudeneKnjigeMrezeIProtokoliActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posudene_knjige_mreze_i_protokoli);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Ove knjige su posuđene!");
     }
 }

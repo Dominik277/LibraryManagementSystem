@@ -11,5 +11,7 @@ public class WishListHardverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_list_hardver);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Ovo je vaša Wish Lista!");
     }
 }
