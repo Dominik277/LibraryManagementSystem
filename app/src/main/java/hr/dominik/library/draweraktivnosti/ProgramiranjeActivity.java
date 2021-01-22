@@ -2,12 +2,11 @@ package hr.dominik.library.draweraktivnosti;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuItemCompat;
 import hr.dominik.library.DatabaseHelpers.ProgramiranjeDatabaseHelper;
 import hr.dominik.library.ItemClickActivity.ItemClickProgramiranjeActivity;
 import hr.dominik.library.ModifyActivity.ModifyProgramiranjeActivity;
-import hr.dominik.library.ProgramiranjeMenuActivity.PosudeneKnjigeActivity;
-import hr.dominik.library.ProgramiranjeMenuActivity.WishListActivity;
+import hr.dominik.library.ProgramiranjeMenuActivity.PosudeneKnjigeProgramiranjeActivity;
+import hr.dominik.library.ProgramiranjeMenuActivity.WishListProgramiranjeActivity;
 import hr.dominik.library.R;
 import hr.dominik.library.SearchActivity.SearchProgramiranjeActivity;
 import hr.dominik.library.UnesiKnjiguActivity.UnesiteKnjiguProgramiranjeActivity;
@@ -18,14 +17,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -104,10 +99,10 @@ public class ProgramiranjeActivity extends AppCompatActivity {
                 startActivity(new Intent(ProgramiranjeActivity.this, SearchProgramiranjeActivity.class));
                 break;
             case R.id.posudeneKnjige:
-                startActivity(new Intent(ProgramiranjeActivity.this,PosudeneKnjigeActivity.class));
+                startActivity(new Intent(ProgramiranjeActivity.this, PosudeneKnjigeProgramiranjeActivity.class));
                 break;
             case R.id.wishListKnjige:
-                startActivity(new Intent(ProgramiranjeActivity.this,WishListActivity.class));
+                startActivity(new Intent(ProgramiranjeActivity.this, WishListProgramiranjeActivity.class));
         }
         return true;
     }

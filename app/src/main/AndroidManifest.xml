@@ -9,12 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem">
+        <activity android:name=".OperativniSustaviMenuActivity.WishListOperativniSustaviActivity"></activity>
+        <activity android:name=".OperativniSustaviMenuActivity.PosudeneKnjigeOperativniSustaviActivity" />
+        <activity android:name=".MrezeIProtokoliMenuActivity.WishListMrezeIProtokoliActivity" />
+        <activity android:name=".MrezeIProtokoliMenuActivity.PosudeneKnjigeMrezeIProtokoliActivity" />
+        <activity android:name=".HardverMenuActivity.WishListHardverActivity" />
+        <activity android:name=".HardverMenuActivity.PosudeneKnjigeHardverActivity" />
         <activity
-            android:name=".ProgramiranjeMenuActivity.WishListActivity"
-            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
+            android:name=".ProgramiranjeMenuActivity.WishListProgramiranjeActivity"
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity" />
         <activity
-            android:name=".ProgramiranjeMenuActivity.PosudeneKnjigeActivity"
-            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity"/>
+            android:name=".ProgramiranjeMenuActivity.PosudeneKnjigeProgramiranjeActivity"
+            android:parentActivityName=".draweraktivnosti.ProgramiranjeActivity" />
         <activity
             android:name=".SearchActivity.SearchHardverActivity"
             android:parentActivityName=".draweraktivnosti.HardverActivity" />
