@@ -12,12 +12,13 @@ import java.util.HashMap;
 public class HardverDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "hardver_db";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String TABLE_NAME = "hardver";
     public static final String KEY_ID = "id";
     public static final String KEY_NAME = "name";
     public static final String KEY_AUTHOR = "author";
     public static final String KEY_PAGES = "pages";
+    public static final String KEY_FAVORITE = "favorite";
 
     private SQLiteDatabase databaseHardver;
 
@@ -31,15 +32,17 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + KEY_NAME + " TEXT, "
                 + KEY_AUTHOR + " TEXT, "
-                + KEY_PAGES + " TEXT "
+                + KEY_PAGES + " TEXT, "
+                + KEY_FAVORITE + " NUMERIC "
                 + ")";
         db.execSQL(CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        onCreate(db);
+        if (oldVersion == 1){
+            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN " + KEY_FAVORITE + " NUMERIC;");
+        }
     }
 
     public void insertBookHardver(String name, String author, String pages){
