@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,8 +24,11 @@ public class ModifyHardverActivity extends AppCompatActivity {
     private EditText editTextStraniceHardver;
     private Button gumbUpdateHardver;
     private Button gumbDeleteHardver;
+    private CheckBox favoriteHardver;
 
     private HardverDatabaseHelper databaseHelperHardver;
+
+    public static final String EXTRA_HARDVERID = "hardverId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class ModifyHardverActivity extends AppCompatActivity {
 
         gumbUpdateHardver = findViewById(R.id.gumbUpdateHardver);
         gumbDeleteHardver = findViewById(R.id.gumbDeleteHardver);
+
+        favoriteHardver = findViewById(R.id.favoriteHardver);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
@@ -76,4 +82,9 @@ public class ModifyHardverActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onFavoriteClickHardver(View view){
+
+    }
+
 }

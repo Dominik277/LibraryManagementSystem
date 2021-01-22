@@ -103,4 +103,13 @@ public class HardverDatabaseHelper extends SQLiteOpenHelper {
         return i;
     }
 
+    public void favoriteQueryHardver(String name){
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.query(TABLE_NAME,
+                                    new String[]{KEY_FAVORITE},
+                                    "name = ?",
+                                    new String[]{String.valueOf(name)},
+                                    null,null,null);
+    }
+
 }

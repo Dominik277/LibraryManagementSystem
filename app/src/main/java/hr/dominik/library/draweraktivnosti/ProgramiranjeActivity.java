@@ -81,6 +81,13 @@ public class ProgramiranjeActivity extends AppCompatActivity {
             }
         });
 
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        };
+
     }
 
     @Override
