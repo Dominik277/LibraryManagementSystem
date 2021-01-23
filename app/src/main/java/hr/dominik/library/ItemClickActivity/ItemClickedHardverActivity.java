@@ -53,7 +53,10 @@ public class ItemClickedHardverActivity extends AppCompatActivity {
                 Toast.makeText(ItemClickedHardverActivity.this,editTextIme + editTextPrezime
                         + ". Zahvaljujemo se na posudbi.Detaljne podatke smo vam poslali na email "
                         + editTextEmail + ". Srdačan Pozdrav!",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(ItemClickedHardverActivity.this, PosudeneKnjigeHardverActivity.class));
+                Intent intent = new Intent(ItemClickedHardverActivity.this,PosudeneKnjigeHardverActivity.class);
+                intent.putExtra("name",name);
+                intent.putExtra("author",author);
+                startActivity(intent);
             }
         });
 
