@@ -1,6 +1,7 @@
 package hr.dominik.library.ItemClickActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import hr.dominik.library.HardverMenuActivity.PosudeneKnjigeHardverActivity;
 import hr.dominik.library.R;
 
 import android.content.Intent;
@@ -52,6 +53,7 @@ public class ItemClickedHardverActivity extends AppCompatActivity {
                 Toast.makeText(ItemClickedHardverActivity.this,editTextIme + editTextPrezime
                         + ". Zahvaljujemo se na posudbi.Detaljne podatke smo vam poslali na email "
                         + editTextEmail + ". Srdačan Pozdrav!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ItemClickedHardverActivity.this, PosudeneKnjigeHardverActivity.class));
             }
         });
 
