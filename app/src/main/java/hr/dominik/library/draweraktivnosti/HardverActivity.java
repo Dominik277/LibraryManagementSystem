@@ -53,10 +53,17 @@ public class HardverActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView textViewName = view.findViewById(R.id.textViewNameHardver);
+                TextView textViewPisac = view.findViewById(R.id.textViewAuthorHardver);
+                TextView textViewStranice = view.findViewById(R.id.textViewPagesHardver);
+
                 String name = textViewName.getText().toString();
+                String author = textViewPisac.getText().toString();
+                String pages = textViewStranice.getText().toString();
 
                 Intent intent = new Intent(HardverActivity.this, ItemClickedHardverActivity.class);
                 intent.putExtra("name",name);
+                intent.putExtra("author",author);
+                intent.putExtra("pages",pages);
                 startActivity(intent);
 
             }

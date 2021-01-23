@@ -13,9 +13,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Želite li posuditi ovu knjigu?"
-        android:textSize="22dp"
+        android:text="Želite li posuditi knjigu"
+        android:textSize="26dp"
         android:textColor="#000"/>
+    <TextView
+        android:id="@+id/hardverKnjiga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Koju je napisao pisac"
+        android:textSize="26dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/hardverPisac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,24 +43,24 @@
         android:id="@+id/editTextPosudbaImeHardver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:hint="Ovdje upišite svoje ime..."/>
     <EditText
         android:id="@+id/editTextPosudbaPrezimeHardver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:hint="Ovdje upišite svoje prezime..."/>
     <EditText
         android:id="@+id/editTextPosudbaEmailHardver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:hint="Ovdje upišite svoj email..."/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
         android:text="Posudi"
         android:textSize="24dp"/>
