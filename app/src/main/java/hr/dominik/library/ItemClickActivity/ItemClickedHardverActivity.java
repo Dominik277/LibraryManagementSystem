@@ -56,6 +56,8 @@ public class ItemClickedHardverActivity extends AppCompatActivity {
                 Intent intent = new Intent(ItemClickedHardverActivity.this,PosudeneKnjigeHardverActivity.class);
                 intent.putExtra("name",name);
                 intent.putExtra("author",author);
+                intent.putExtra("posudio",editTextIme);
+                intent.putExtra("email",editTextEmail);
                 startActivity(intent);
             }
         });
