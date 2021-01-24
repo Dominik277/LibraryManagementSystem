@@ -1,17 +1,11 @@
 package hr.dominik.library.HardverMenuActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import hr.dominik.library.ListViewAdapter.MyHardverAdapter;
 import hr.dominik.library.R;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class PosudeneKnjigeHardverActivity extends AppCompatActivity {
 
@@ -32,8 +26,7 @@ public class PosudeneKnjigeHardverActivity extends AppCompatActivity {
 
         listViewPosudeneKnjigeHardver = findViewById(R.id.listViewPosudeneHardver);
 
-        MyHardverAdapter adapter = new MyHardverAdapter(this,name,author,posudio,email);
-        listViewPosudeneKnjigeHardver.setAdapter(adapter);
+
 
     }
 }

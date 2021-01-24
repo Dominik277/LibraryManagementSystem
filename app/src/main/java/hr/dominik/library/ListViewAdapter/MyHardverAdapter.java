@@ -8,40 +8,42 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import hr.dominik.library.R;
 
 public class MyHardverAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final String name;
-    private final String author;
-    private final String ime;
+    private final String imeKnjige;
+    private final String autor;
+    private final String posudio;
     private final String email;
 
-    public MyHardverAdapter(Activity context,String name, String author, String ime, String email) {
+    public MyHardverAdapter(Activity context,String imeKnjige,String autor,String posudio,String email) {
         super(context, R.layout.posudene_knjige_item);
         this.context = context;
-        this.name = name;
-        this.author = author;
-        this.ime = ime;
+        this.imeKnjige = imeKnjige;
+        this.autor = autor;
+        this.posudio = posudio;
         this.email = email;
     }
 
-    public View getView(int position, View view, ViewGroup parent){
+    @Override
+    public View getView(int position,View convertView,ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.posudene_knjige_item,null,true);
 
-        TextView imeKnjige = (TextView)rowView.findViewById(R.id.imeKnjige);
-        TextView autorKnjige = (TextView)rowView.findViewById(R.id.autor);
-        TextView posudio = (TextView)rowView.findViewById(R.id.posudio);
-        TextView email = (TextView)rowView.findViewById(R.id.email);
+        TextView imeKnjige = rowView.findViewById(R.id.imeKnjige);
+        TextView autor = rowView.findViewById(R.id.autor);
+        TextView posudio = rowView.findViewById(R.id.posudio);
+        TextView email = rowView.findViewById(R.id.email);
 
-        imeKnjige.setText(name);
-        autorKnjige.setText(author);
-        posudio.setText(ime);
+        imeKnjige.setText((CharSequence) imeKnjige);
+        autor.setText((CharSequence) autor);
+        posudio.setText((CharSequence) posudio);
         email.setText((CharSequence) email);
 
         return rowView;
     }
-
 }
